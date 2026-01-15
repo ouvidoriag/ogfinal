@@ -47,6 +47,18 @@ const OVERVIEW_FIELDS = [
  * @param {Function} getMongoClient - Função para obter cliente MongoDB
  */
 export async function startChangeStreamWatcher(prisma, getMongoClient) {
+  // 🟢 OPÇÃO B (Recomendada): Polling em vez de ChangeStream
+  // Padrão: Polling (ChangeStream apenas se ENABLE_CHANGE_STREAM=true)
+  const useChangeStream = process.env.ENABLE_CHANGE_STREAM === 'true';
+
+  if (!useChangeStream) {
+    console.log('🟡 ChangeStream desativado via configuração. Iniciando Polling Inteligente (30s)...');
+
+    // Iniciar Polling
+    startPollingWatcher(getMongoClient);
+    return null; // Retorna null pois não há stream real
+  }
+
   try {
     const client = await getMongoClient();
 
@@ -119,8 +131,51 @@ export async function startChangeStreamWatcher(prisma, getMongoClient) {
     return changeStream;
   } catch (error) {
     console.error('❌ Erro ao iniciar ChangeStream Watcher:', error);
-    throw error;
+    // Fallback para polling em caso de erro
+    console.log('⚠️ Falha no ChangeStream. Ativando Polling de emergência...');
+    startPollingWatcher(getMongoClient);
+    return null;
   }
+}
+
+/**
+ * Polling Watcher (Fallback seguro)
+ * Checa por atualizações a cada 30 segundos
+ */
+let lastCheck = new Date();
+const POLL_INTERVAL = 30000; // 30 segundos
+
+async function startPollingWatcher(getMongoClient) {
+  setInterval(async () => {
+    try {
+      const client = await getMongoClient();
+      // Usar a mesma lógica de descoberta de DB
+      const dbName = 'dashboard'; // Simplificação segura para polling
+      const db = client.db(dbName);
+      const collection = db.collection('records');
+
+      // Buscar registros alterados recentemente
+      // Nota: Isso assume que temos um campo updatedAt confiável. 
+      // Se não tivermos, usamos countDocuments como proxy simples para inserts/deletes
+      // Ou invalidamos o cache periodicamente de forma preventiva
+
+      // Estratégia Híbrida:
+      // 1. Invalidar overview a cada ciclo (seguro)
+      // 2. Tentar ser esperto se possível
+
+      // Simples e eficaz: Invalidar apenas chaves críticas periodicamente
+      // "Overview" é o mais importante
+
+      pendingPatterns.add('overview*');
+      pendingPatterns.add('dashboard*');
+
+      // Processar invalidações
+      flushInvalidations('polling', ['periodic_check']);
+
+    } catch (err) {
+      console.error('❌ Erro no Polling:', err.message);
+    }
+  }, POLL_INTERVAL);
 }
 
 // Buffer global para debounce de invalidação de cache

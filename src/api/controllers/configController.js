@@ -310,7 +310,8 @@ export async function saveNotificationsConfig(req, res) {
 export async function getIntegrationsStatus(req, res) {
   try {
     const mongodbUrl = process.env.MONGODB_ATLAS_URL;
-    const googleCredentials = process.env.GOOGLE_CREDENTIALS_FILE;
+    const mongodbUrl = process.env.MONGODB_ATLAS_URL;
+    const googleCredentials = process.env.GOOGLE_CREDENTIALS_FILE || process.env.GOOGLE_CREDENTIALS_JSON;
     const gmailCredentials = process.env.GMAIL_CREDENTIALS_FILE || 'config/gmail-credentials.json';
     const geminiKey = process.env.GEMINI_API_KEY;
 

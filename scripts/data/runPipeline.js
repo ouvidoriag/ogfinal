@@ -49,60 +49,86 @@ const PLANILHA_TRATADA_ID = process.env.GOOGLE_SHEET_ID || "1SCifd4v8D54qihNbwFW
  * @returns {string} Caminho do arquivo de credenciais encontrado
  * @throws {Error} Se o arquivo não for encontrado
  */
-function findCredentialsFile() {
+/**
+ * Obter credenciais do Google (JSON)
+ * Prioridade:
+ * 1. Variável de ambiente GOOGLE_CREDENTIALS_JSON (String JSON completa)
+ * 2. Arquivo apontado por GOOGLE_CREDENTIALS_FILE
+ * 3. Arquivos padrão em locais conhecidos
+ */
+function getCredentials() {
+  // 1. Tentar ler da variável de ambiente direta (recomendado para Render/Production)
+  if (process.env.GOOGLE_CREDENTIALS_JSON) {
+    try {
+      const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
+      console.log('✅ Credenciais carregadas via GOOGLE_CREDENTIALS_JSON (ENV)');
+      return credentials;
+    } catch (e) {
+      console.error('❌ Erro ao fazer parse de GOOGLE_CREDENTIALS_JSON:', e.message);
+      // Continuar tentando arquivos...
+    }
+  }
+
+  // 2. Buscar arquivo
   const envPath = process.env.GOOGLE_CREDENTIALS_FILE;
   const defaultPath = 'config/google-credentials.json';
+
+  let finalPath = null;
 
   // Se GOOGLE_CREDENTIALS_FILE está definido
   if (envPath) {
     if (path.isAbsolute(envPath)) {
       if (fs.existsSync(envPath)) {
-        return envPath;
+        finalPath = envPath;
       }
     } else {
       // Tentar múltiplos locais possíveis
       const possiblePaths = [
-        path.join(projectRoot, envPath), // NOVO/config/google-credentials.json
-        path.join(__dirname, '..', envPath), // NOVO/scripts/config/google-credentials.json
-        path.join(pipelineRoot, envPath), // Dashboard/config/google-credentials.json
-        path.join(process.cwd(), envPath) // Diretório atual/config/google-credentials.json
+        path.join(projectRoot, envPath),
+        path.join(__dirname, '..', envPath),
+        path.join(pipelineRoot, envPath),
+        path.join(process.cwd(), envPath)
       ];
 
       for (const possiblePath of possiblePaths) {
         if (fs.existsSync(possiblePath)) {
-          return possiblePath;
+          finalPath = possiblePath;
+          break;
         }
       }
     }
   }
 
-  // Tentar locais padrão
-  const possiblePaths = [
-    path.join(projectRoot, defaultPath), // NOVO/config/google-credentials.json
-    path.join(__dirname, '..', defaultPath), // NOVO/scripts/config/google-credentials.json
-    path.join(pipelineRoot, defaultPath), // Dashboard/config/google-credentials.json
-    path.join(process.cwd(), defaultPath) // Diretório atual/config/google-credentials.json
-  ];
+  if (!finalPath) {
+    // Tentar locais padrão
+    const possiblePaths = [
+      path.join(projectRoot, defaultPath),
+      path.join(__dirname, '..', defaultPath),
+      path.join(pipelineRoot, defaultPath),
+      path.join(process.cwd(), defaultPath)
+    ];
 
-  for (const possiblePath of possiblePaths) {
-    if (fs.existsSync(possiblePath)) {
-      return possiblePath;
+    for (const possiblePath of possiblePaths) {
+      if (fs.existsSync(possiblePath)) {
+        finalPath = possiblePath;
+        break;
+      }
     }
   }
 
-  // Se não encontrou, lançar erro com informações úteis
-  const errorMsg = `❌ Arquivo de credenciais não encontrado.
+  if (finalPath) {
+    console.log(`✅ Arquivo de credenciais encontrado: ${finalPath}`);
+    return JSON.parse(fs.readFileSync(finalPath, 'utf-8'));
+  }
 
-Caminhos verificados:
-${envPath ? `- ${envPath} (de GOOGLE_CREDENTIALS_FILE)` : ''}
-- ${path.join(projectRoot, defaultPath)}
-- ${path.join(__dirname, '..', defaultPath)}
-- ${path.join(pipelineRoot, defaultPath)}
-- ${path.join(process.cwd(), defaultPath)}
+  // Se não encontrou nada
+  const errorMsg = `❌ Credenciais não encontradas (ENV ou Arquivo).
+  
+Configuração recomendada (Produção/Render):
+- Defina a variável de ambiente GOOGLE_CREDENTIALS_JSON com o conteúdo do JSON.
 
-💡 Solução:
-1. Coloque o arquivo em: ${path.join(projectRoot, defaultPath)}
-2. Ou defina GOOGLE_CREDENTIALS_FILE no .env com o caminho correto`;
+Configuração Local:
+- Arquivo config/google-credentials.json`;
 
   throw new Error(errorMsg);
 }
@@ -111,11 +137,7 @@ ${envPath ? `- ${envPath} (de GOOGLE_CREDENTIALS_FILE)` : ''}
  * Preparar credenciais para o Python (converter para Base64 como esperado pelo main.py)
  */
 function prepareCredentialsForPython() {
-  const credentialsFile = findCredentialsFile();
-
-  // Ler credenciais JSON
-  const credentialsContent = fs.readFileSync(credentialsFile, 'utf-8');
-  const credentials = JSON.parse(credentialsContent);
+  const credentials = getCredentials();
 
   // Converter para Base64 (como o main.py espera)
   const credentialsBase64 = Buffer.from(JSON.stringify(credentials)).toString('base64');
@@ -217,10 +239,7 @@ async function runPythonPipeline() {
  * Autenticar e obter cliente do Google Sheets
  */
 async function getGoogleClient() {
-  const credentialsFile = findCredentialsFile();
-
-  const credentialsContent = fs.readFileSync(credentialsFile, 'utf-8');
-  const credentials = JSON.parse(credentialsContent);
+  const credentials = getCredentials();
 
   const auth = new google.auth.GoogleAuth({
     credentials: credentials,

@@ -11,6 +11,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import compression from 'compression';
 import session from 'express-session';
+import MongoStore from 'connect-mongo';
 
 // Middlewares de segurança e performance
 import {
@@ -191,17 +192,24 @@ const sessionConfig = {
 };
 
 // Em produção, usar MongoStore
-if (process.env.NODE_ENV === 'production' && process.env.MONGODB_ATLAS_URL) {
+// Em produção, usar MongoStore
+if (process.env.NODE_ENV === 'production') {
+  if (!process.env.MONGODB_ATLAS_URL) {
+    console.error('❌ ERRO CRÍTICO: MONGODB_ATLAS_URL obrigatório em produção para sessões.');
+    process.exit(1);
+  }
+
   try {
     sessionConfig.store = MongoStore.create({
       mongoUrl: process.env.MONGODB_ATLAS_URL,
       collectionName: 'sessions',
-      ttl: 24 * 60 * 60,
+      ttl: 14 * 24 * 60 * 60, // 14 dias
       autoRemove: 'native'
     });
     console.log('🔒 Sessão configurada com MongoStore (Produção)');
   } catch (err) {
-    console.warn('⚠️ Falha ao configurar MongoStore, usando MemoryStore:', err.message);
+    console.error('❌ Falha fatal ao configurar MongoStore:', err.message);
+    process.exit(1);
   }
 }
 
