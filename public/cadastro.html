@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Dashboard Ouvidoria Duque de Caxias</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: rgba(30, 41, 59, 0.95);
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: rgba(59, 130, 246, 0.3);
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px;
+            padding-right: 80px;
+            color: var(--text-primary);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Vídeo de fundo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Overlay escuro sobre o vídeo */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: -1;
+        }
+
+        /* Container de cadastro */
+        .register-container {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            animation: slideUp 0.4s ease-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .register-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .register-container::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 4px;
+        }
+
+        .register-container::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo e título */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo-container img {
+            max-width: 140px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .logo-container h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 12px 0 8px;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+
+        .logo-container .subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .logo-container .city-name {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        /* Formulário */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            transition: border-color 0.2s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        /* Botão de cadastro */
+        .btn-register {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .btn-register:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-register:active {
+            transform: scale(0.98);
+        }
+
+        .btn-register:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Mensagem de erro */
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Mensagem de sucesso */
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Loading spinner */
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.6s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Link para login */
+        .login-link {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .login-link p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .login-link a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        .login-link a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            body {
+                justify-content: center;
+                padding-right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .register-container {
+                padding: 36px 28px;
+                max-width: 100%;
+            }
+
+            .logo-container h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Vídeo de fundo -->
+    <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline>
+        <source src="/videos/VN20251209_144035.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay escuro -->
+    <div class="video-overlay"></div>
+
+    <!-- Container de cadastro -->
+    <div class="register-container">
+        <div class="logo-container">
+            <img src="/dc-logo.png" alt="Logo Duque de Caxias" onerror="this.style.display='none'">
+            <h1>Cadastro</h1>
+            <div class="subtitle">Ouvidoria</div>
+            <div class="city-name">Duque de Caxias • RJ</div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="nomeCompleto">Nome Completo *</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required autocomplete="name"
+                    placeholder="Digite seu nome completo" autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento *</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required autocomplete="bday">
+            </div>
+
+            <div class="form-group">
+                <label for="matriculaPrefeitura">Matrícula da Prefeitura *</label>
+                <input type="text" id="matriculaPrefeitura" name="matriculaPrefeitura" required
+                    placeholder="Digite sua matrícula" style="text-transform: uppercase;">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                    placeholder="seu.email@exemplo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" required autocomplete="tel"
+                    placeholder="(21) 99999-9999">
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo *</label>
+                <input type="text" id="cargo" name="cargo" required placeholder="Digite seu cargo">
+            </div>
+
+            <div class="form-group">
+                <label for="username">Usuário *</label>
+                <input type="text" id="username" name="username" required autocomplete="username"
+                    placeholder="Escolha um nome de usuário">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha *</label>
+                <input type="password" id="password" name="password" required autocomplete="new-password"
+                    placeholder="Mínimo 6 caracteres" minlength="6">
+            </div>
+
+            <button type="submit" class="btn-register" id="registerButton">
+                Criar Conta
+            </button>
+        </form>
+
+        <div class="login-link">
+            <p>Já possui uma conta?</p>
+            <a href="/login">Fazer Login</a>
+        </div>
+    </div>
+
+    <script>
+        // Gerenciamento de tema (mantido para compatibilidade)
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+
+        // Formulário de cadastro
+        const registerForm = document.getElementById('registerForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const registerButton = document.getElementById('registerButton');
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            successMessage.classList.remove('show');
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.classList.add('show');
+            errorMessage.classList.remove('show');
+        }
+
+        function setLoading(loading) {
+            if (loading) {
+                registerButton.disabled = true;
+                registerButton.innerHTML = '<span class="loading"></span>Cadastrando...';
+            } else {
+                registerButton.disabled = false;
+                registerButton.innerHTML = 'Criar Conta';
+            }
+        }
+
+        // Máscara para telefone
+        const telefoneInput = document.getElementById('telefone');
+        telefoneInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                if (value.length <= 10) {
+                    value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                }
+                e.target.value = value;
+            }
+        });
+
+        // Formatação de matrícula (maiúsculas)
+        const matriculaInput = document.getElementById('matriculaPrefeitura');
+        matriculaInput.addEventListener('input', function (e) {
+            e.target.value = e.target.value.toUpperCase();
+        });
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                nomeCompleto: document.getElementById('nomeCompleto').value.trim(),
+                dataNascimento: document.getElementById('dataNascimento').value,
+                matriculaPrefeitura: document.getElementById('matriculaPrefeitura').value.trim().toUpperCase(),
+                email: document.getElementById('email').value.trim().toLowerCase(),
+                telefone: document.getElementById('telefone').value.trim(),
+                cargo: document.getElementById('cargo').value.trim(),
+                username: document.getElementById('username').value.trim().toLowerCase(),
+                password: document.getElementById('password').value
+            };
+
+            // Validação básica
+            if (!formData.nomeCompleto || !formData.dataNascimento || !formData.matriculaPrefeitura ||
+                !formData.email || !formData.telefone || !formData.cargo ||
+                !formData.username || !formData.password) {
+                showError('Por favor, preencha todos os campos');
+                return;
+            }
+
+            if (formData.password.length < 6) {
+                showError('A senha deve ter no mínimo 6 caracteres');
+                return;
+            }
+
+            setLoading(true);
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(formData)
+                });
+
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('Resposta não é JSON:', text);
+                    showError('Erro no servidor. Tente novamente.');
+                    setLoading(false);
+                    return;
+                }
+
+                const data = await response.json();
+
+                if (data.success) {
+                    registerButton.style.background = '#10b981';
+                    registerButton.innerHTML = '✓ Conta Criada!';
+                    showSuccess('Cadastro realizado com sucesso! Redirecionando...');
+
+                    setTimeout(() => {
+                        window.location.href = '/login';
+                    }, 2000);
+                } else {
+                    showError(data.message || 'Erro ao realizar cadastro');
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error('Erro no cadastro:', error);
+                showError('Erro de conexão. Verifique sua internet.');
+                setLoading(false);
+            }
+        });
+
+        // Verificar se já está autenticado
+        let authCheckDone = false;
+        (async () => {
+            if (authCheckDone) return;
+            authCheckDone = true;
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+                const response = await fetch('/api/auth/me', {
+                    credentials: 'include',
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success && data.user) {
+                        window.location.href = '/dashboard';
+                        return;
+                    }
+                }
+            } catch (error) {
+                // Não autenticado, continuar na página de cadastro
+            }
+        })();
+    </script>
+</body>
+
+</html>

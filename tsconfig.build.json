@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "./public/scripts",
+    "rootDir": "./public/scripts",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": false,
+    "sourceMap": false,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types", "./public/scripts/core/chart-communication"]
+  },
+  "include": [
+    "public/scripts/core/chart-communication/global.d.ts",
+    "public/scripts/core/chart-communication/*.ts",
+    "public/scripts/core/chart-legend.ts",
+    "public/scripts/core/dataLoader.ts",
+    "public/scripts/core/global-store.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/__tests__/**",
+    "dist",
+    "build"
+  ]
+}
+

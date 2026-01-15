@@ -1,0 +1,81 @@
+# Arquivos e Pastas a Excluir do Deploy
+
+# Dependências (serão reinstaladas no servidor)
+node_modules/
+venv/
+
+# Logs
+logs/*.log
+logs/*.log.*
+
+# Cache e dados temporários
+db-data/*
+.cache/
+.temp/
+tmp/
+temp/
+
+# Build artifacts
+dist/
+build/
+
+# Testes e coverage
+coverage/
+.nyc_output/
+test-results/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+*.bak
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Git
+.git/
+
+# Arquivos sensíveis (NÃO incluir no deploy público)
+# Nota: .env e google-credentials.json devem ser configurados manualmente no servidor
+# .env
+# google-credentials.json
+
+# Documentação de desenvolvimento (opcional)
+# docs/development/
+# *.md (exceto README.md)
+
+# Arquivos grandes desnecessários
+*.mp4
+*.avi
+*.mov
+*.zip
+*.tar.gz
+*.rar
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# NPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+
+# Outros
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

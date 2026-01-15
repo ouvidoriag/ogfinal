@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@core/*": ["./public/scripts/core/*"],
+      "@pages/*": ["./public/scripts/pages/*"],
+      "@utils/*": ["./public/scripts/utils/*"]
+    },
+    "types": ["node", "vitest/globals"],
+    "typeRoots": ["./node_modules/@types", "./public/scripts/core/chart-communication"]
+  },
+  "include": [
+    "src/**/*",
+    "public/scripts/**/*",
+    "public/scripts/core/chart-communication/global.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "ANTIGO/**/*"
+  ]
+}
+

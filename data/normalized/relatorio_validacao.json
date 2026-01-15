@@ -1,0 +1,74 @@
+{
+  "collections": {
+    "bairros": {
+      "existe": true,
+      "total": 77,
+      "indices": 6
+    },
+    "distritos": {
+      "existe": true,
+      "total": 4,
+      "indices": 2
+    },
+    "escolas": {
+      "existe": true,
+      "total": 192,
+      "indices": 7
+    },
+    "unidades_saude": {
+      "existe": true,
+      "total": 34,
+      "indices": 7
+    },
+    "servicos_socioassistenciais": {
+      "existe": true,
+      "total": 24,
+      "indices": 7
+    },
+    "secretarias_info": {
+      "existe": true,
+      "total": 48,
+      "indices": 5
+    },
+    "records": {
+      "existe": true,
+      "total": 19001,
+      "indices": 39
+    }
+  },
+  "relacionamentos": {
+    "totalRecords": 19001,
+    "comBairroId": {
+      "total": 1247,
+      "percentual": "6.56"
+    },
+    "comSecretariaId": {
+      "total": 15332,
+      "percentual": "80.69"
+    },
+    "comUnidadeSaudeId": {
+      "total": 1335,
+      "percentual": "7.03"
+    },
+    "comDistritoId": {
+      "total": 1247,
+      "percentual": "6.56"
+    }
+  },
+  "indices": {},
+  "queries": {
+    "recordsPorSecretaria": {
+      "tempo": 103,
+      "resultados": 100
+    },
+    "agregacaoBairro": {
+      "tempo": 37,
+      "resultados": 10
+    },
+    "lookupBairros": {
+      "tempo": 33,
+      "resultados": 50
+    }
+  },
+  "erros": []
+}

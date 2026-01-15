@@ -1,0 +1,34 @@
+{
+  "data_geracao": "2026-01-15",
+  "municipio": "Duque de Caxias",
+  "estado": "RJ",
+  "total_registros": {
+    "escolas": 201,
+    "servicos_socioassistenciais": 24,
+    "secretarias": 24,
+    "unidades_saude": 72,
+    "total_geral": 321
+  },
+  "distribuicao_por_distrito": {
+    "distrito_1": {
+      "escolas": 73,
+      "secretarias": 12,
+      "unidades_saude": 16
+    },
+    "distrito_2": {
+      "escolas": 66,
+      "secretarias": 12,
+      "unidades_saude": 5
+    },
+    "distrito_3": {
+      "escolas": 37,
+      "secretarias": 0,
+      "unidades_saude": 11
+    },
+    "distrito_4": {
+      "escolas": 25,
+      "secretarias": 0,
+      "unidades_saude": 2
+    }
+  }
+}

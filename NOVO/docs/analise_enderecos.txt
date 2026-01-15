@@ -1,0 +1,43 @@
+ANÁLISE ESTATÍSTICA - SECRETARIAS E ENDEREÇOS
+Gerado em: 15/01/2026, 08:50:38
+
+================================================================================
+
+RESUMO GERAL:
+- Total de órgãos/secretarias: 24
+- Total de registros no banco: 29.989
+- Total de endereços únicos: 1832
+
+COM ENDEREÇO:
+- Órgãos: 23 (95.8%)
+- Registros: 29.979 (100.0%)
+
+SEM ENDEREÇO:
+- Órgãos: 1 (4.2%)
+- Registros: 10 (0.0%)
+
+ÓRGÃOS SEM ENDEREÇO:
+1. FUNDEC - 10 registros
+
+MÚLTIPLOS ENDEREÇOS:
+- Órgãos com múltiplos endereços: 23
+
+TOP 5 - MAIS ENDEREÇOS:
+1. Secretaria de Obras e Agricultura: 406 endereços
+2. Secretaria de Segurança Pública: 231 endereços
+3. Secretaria de Meio Ambiente: 200 endereços
+4. Emprego e Renda: 153 endereços
+5. Relações Públicas: 153 endereços
+
+TOP 5 - MAIS REGISTROS:
+1. Secretaria de Saúde: 13.001 registros
+2. Emprego e Renda: 3.662 registros
+3. Relações Públicas: 3.662 registros
+4. Secretaria de Comunicação Social: 3.662 registros
+5. Trabalho: 3.662 registros
+
+MÉDIAS:
+- Média de endereços por órgão: 76.33
+- Média de registros por órgão: 1250
+
+================================================================================

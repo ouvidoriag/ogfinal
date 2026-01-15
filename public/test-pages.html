@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Páginas e Gráficos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #22d3ee;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .controls {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+      color: #0f172a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(34, 211, 238, 0.2);
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(34, 211, 238, 0.3);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    button.secondary {
+      background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+    }
+    
+    button.danger {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    }
+    
+    .options {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    
+    .option label {
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .results {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      max-height: 600px;
+      overflow-y: auto;
+    }
+    
+    .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    
+    .status.running {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+    
+    .status.success {
+      background: #10b981;
+      color: #0f172a;
+    }
+    
+    .status.error {
+      background: #ef4444;
+      color: #fff;
+    }
+    
+    .log {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    
+    .log-entry {
+      margin-bottom: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background: rgba(30, 41, 59, 0.5);
+    }
+    
+    .log-entry.success {
+      border-left: 3px solid #10b981;
+    }
+    
+    .log-entry.error {
+      border-left: 3px solid #ef4444;
+    }
+    
+    .log-entry.info {
+      border-left: 3px solid #22d3ee;
+    }
+    
+    .log-entry.warning {
+      border-left: 3px solid #f59e0b;
+    }
+    
+    .summary {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(34, 211, 238, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+    
+    .summary h3 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+    
+    .summary-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .stat {
+      text-align: center;
+      padding: 15px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+    }
+    
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #22d3ee;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(34, 211, 238, 0.3);
+      border-top-color: #22d3ee;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-left: 10px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Teste de Páginas e Gráficos</h1>
+    
+    <div class="controls">
+      <div class="button-group">
+        <button id="btnRunAll" onclick="runAllTests()">▶️ Executar Todos os Testes</button>
+        <button id="btnRunOuvidoria" class="secondary" onclick="runOuvidoriaTests()">📋 Testar Ouvidoria</button>
+        <button id="btnRunZeladoria" class="secondary" onclick="runZeladoriaTests()">🏗️ Testar Zeladoria</button>
+        <button id="btnClear" class="danger" onclick="clearResults()">🗑️ Limpar Resultados</button>
+      </div>
+      
+      <div class="options">
+        <div class="option">
+          <input type="checkbox" id="skipOuvidoria" checked>
+          <label for="skipOuvidoria">Pular Ouvidoria</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="skipZeladoria" checked>
+          <label for="skipZeladoria">Pular Zeladoria</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="skipUnits" checked>
+          <label for="skipUnits">Pular Unidades</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="results">
+      <div id="status">
+        <span>Status: </span>
+        <span id="statusText">Aguardando...</span>
+        <span id="statusBadge" class="status"></span>
+        <span id="loading" class="loading hidden"></span>
+      </div>
+      
+      <div id="log" class="log"></div>
+      
+      <div id="summary" class="summary hidden">
+        <h3>📊 Resumo dos Testes</h3>
+        <div class="summary-stats" id="summaryStats"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    let isRunning = false;
+    let logEntries = [];
+    
+    // Carregar script de teste
+    const script = document.createElement('script');
+    script.src = '/scripts/test/test-all-pages.js';
+    script.onload = () => {
+      addLog('✅ Script de teste carregado com sucesso!', 'success');
+    };
+    script.onerror = () => {
+      addLog('❌ Erro ao carregar script de teste. Certifique-se de que o servidor está rodando.', 'error');
+    };
+    document.head.appendChild(script);
+    
+    function addLog(message, type = 'info') {
+      const log = document.getElementById('log');
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${type}`;
+      entry.textContent = message;
+      log.appendChild(entry);
+      log.scrollTop = log.scrollHeight;
+      logEntries.push({ message, type, time: new Date() });
+    }
+    
+    function updateStatus(text, badgeClass = '') {
+      const statusText = document.getElementById('statusText');
+      const statusBadge = document.getElementById('statusBadge');
+      const loading = document.getElementById('loading');
+      
+      statusText.textContent = text;
+      statusBadge.className = `status ${badgeClass}`;
+      statusBadge.textContent = badgeClass === 'running' ? 'Executando' : 
+                                 badgeClass === 'success' ? 'Concluído' : 
+                                 badgeClass === 'error' ? 'Erro' : '';
+      
+      if (badgeClass === 'running') {
+        loading.classList.remove('hidden');
+      } else {
+        loading.classList.add('hidden');
+      }
+    }
+    
+    function clearResults() {
+      document.getElementById('log').innerHTML = '';
+      document.getElementById('summary').classList.add('hidden');
+      logEntries = [];
+      updateStatus('Aguardando...', '');
+    }
+    
+    function setButtonsEnabled(enabled) {
+      document.getElementById('btnRunAll').disabled = !enabled;
+      document.getElementById('btnRunOuvidoria').disabled = !enabled;
+      document.getElementById('btnRunZeladoria').disabled = !enabled;
+      isRunning = !enabled;
+    }
+    
+    async function runAllTests() {
+      if (isRunning) return;
+      
+      if (!window.testAllPages) {
+        addLog('❌ Script de teste não está carregado. Recarregue a página.', 'error');
+        return;
+      }
+      
+      clearResults();
+      setButtonsEnabled(false);
+      updateStatus('Executando testes...', 'running');
+      
+      const skipOuvidoria = document.getElementById('skipOuvidoria').checked;
+      const skipZeladoria = document.getElementById('skipZeladoria').checked;
+      const skipUnits = document.getElementById('skipUnits').checked;
+      
+      addLog('🚀 Iniciando testes de todas as páginas...', 'info');
+      
+      // Interceptar console.log para mostrar no log
+      const originalLog = console.log;
+      const originalError = console.error;
+      const originalWarn = console.warn;
+      
+      console.log = (...args) => {
+        originalLog.apply(console, args);
+        addLog(args.join(' '), 'info');
+      };
+      
+      console.error = (...args) => {
+        originalError.apply(console, args);
+        addLog('❌ ' + args.join(' '), 'error');
+      };
+      
+      console.warn = (...args) => {
+        originalWarn.apply(console, args);
+        addLog('⚠️ ' + args.join(' '), 'warning');
+      };
+      
+      try {
+        const results = await window.testAllPages.runAllTests({
+          skipOuvidoria,
+          skipZeladoria,
+          skipUnits,
+          delayBetweenPages: 1000
+        });
+        
+        // Restaurar console
+        console.log = originalLog;
+        console.error = originalError;
+        console.warn = originalWarn;
+        
+        displaySummary(results);
+        updateStatus('Testes concluídos!', 'success');
+        addLog('\n✅ Todos os testes foram concluídos!', 'success');
+      } catch (error) {
+        console.log = originalLog;
+        console.error = originalError;
+        console.warn = originalWarn;
+        
+        updateStatus('Erro durante os testes', 'error');
+        addLog(`❌ Erro: ${error.message}`, 'error');
+      } finally {
+        setButtonsEnabled(true);
+      }
+    }
+    
+    async function runOuvidoriaTests() {
+      if (isRunning) return;
+      
+      if (!window.testAllPages) {
+        addLog('❌ Script de teste não está carregado. Recarregue a página.', 'error');
+        return;
+      }
+      
+      clearResults();
+      setButtonsEnabled(false);
+      updateStatus('Testando Ouvidoria...', 'running');
+      
+      addLog('📋 Testando páginas da Ouvidoria...', 'info');
+      
+      const originalLog = console.log;
+      const originalError = console.error;
+      
+      console.log = (...args) => {
+        originalLog.apply(console, args);
+        addLog(args.join(' '), 'info');
+      };
+      
+      console.error = (...args) => {
+        originalError.apply(console, args);
+        addLog('❌ ' + args.join(' '), 'error');
+      };
+      
+      try {
+        const results = await window.testAllPages.runAllTests({
+          skipOuvidoria: false,
+          skipZeladoria: true,
+          skipUnits: true,
+          delayBetweenPages: 1000
+        });
+        
+        console.log = originalLog;
+        console.error = originalError;
+        
+        displaySummary(results);
+        updateStatus('Testes concluídos!', 'success');
+      } catch (error) {
+        console.log = originalLog;
+        console.error = originalError;
+        updateStatus('Erro durante os testes', 'error');
+        addLog(`❌ Erro: ${error.message}`, 'error');
+      } finally {
+        setButtonsEnabled(true);
+      }
+    }
+    
+    async function runZeladoriaTests() {
+      if (isRunning) return;
+      
+      if (!window.testAllPages) {
+        addLog('❌ Script de teste não está carregado. Recarregue a página.', 'error');
+        return;
+      }
+      
+      clearResults();
+      setButtonsEnabled(false);
+      updateStatus('Testando Zeladoria...', 'running');
+      
+      addLog('🏗️ Testando páginas da Zeladoria...', 'info');
+      
+      const originalLog = console.log;
+      const originalError = console.error;
+      
+      console.log = (...args) => {
+        originalLog.apply(console, args);
+        addLog(args.join(' '), 'info');
+      };
+      
+      console.error = (...args) => {
+        originalError.apply(console, args);
+        addLog('❌ ' + args.join(' '), 'error');
+      };
+      
+      try {
+        const results = await window.testAllPages.runAllTests({
+          skipOuvidoria: true,
+          skipZeladoria: false,
+          skipUnits: true,
+          delayBetweenPages: 1000
+        });
+        
+        console.log = originalLog;
+        console.error = originalError;
+        
+        displaySummary(results);
+        updateStatus('Testes concluídos!', 'success');
+      } catch (error) {
+        console.log = originalLog;
+        console.error = originalError;
+        updateStatus('Erro durante os testes', 'error');
+        addLog(`❌ Erro: ${error.message}`, 'error');
+      } finally {
+        setButtonsEnabled(true);
+      }
+    }
+    
+    function displaySummary(results) {
+      const summary = document.getElementById('summary');
+      const stats = document.getElementById('summaryStats');
+      
+      if (!results || !results.summary) return;
+      
+      const s = results.summary;
+      
+      stats.innerHTML = `
+        <div class="stat">
+          <div class="stat-value">${s.total}</div>
+          <div class="stat-label">Total</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #10b981;">${s.passed}</div>
+          <div class="stat-label">Passou</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #ef4444;">${s.failed}</div>
+          <div class="stat-label">Falhou</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #22d3ee;">${s.successRate.toFixed(1)}%</div>
+          <div class="stat-label">Taxa de Sucesso</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #a78bfa;">${s.chartsFound}</div>
+          <div class="stat-label">Gráficos OK</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #f59e0b;">${s.chartsMissing}</div>
+          <div class="stat-label">Gráficos com Problema</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #22d3ee;">${(s.totalTime / 1000).toFixed(1)}s</div>
+          <div class="stat-label">Tempo Total</div>
+        </div>
+      `;
+      
+      summary.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+

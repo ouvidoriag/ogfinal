@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dashboard Ouvidoria Duque de Caxias</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+        
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: rgba(30, 41, 59, 0.95);
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: rgba(59, 130, 246, 0.3);
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px;
+            padding-right: 80px;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Vídeo de fundo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Overlay escuro sobre o vídeo */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: -1;
+        }
+
+        /* Controles do vídeo */
+        .video-controls {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .video-controls button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .video-controls button:hover {
+            background: var(--accent-hover);
+        }
+
+        .video-controls button:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                justify-content: center;
+                padding-right: 20px;
+            }
+
+            .video-controls {
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 12px;
+            }
+
+            .video-controls button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* Container de login */
+        .login-container {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo e título */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .logo-container h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 12px 0 8px;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+
+        .logo-container .subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .logo-container .city-name {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        /* Formulário */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            transition: border-color 0.2s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        /* Botão de login */
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .btn-login:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-login:active {
+            transform: scale(0.98);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Mensagem de erro */
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Loading spinner */
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.6s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 36px 28px;
+            }
+
+            .logo-container h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Vídeo de fundo -->
+    <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline>
+        <source src="/videos/VN20251209_144035.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Overlay escuro -->
+    <div class="video-overlay"></div>
+
+    <!-- Controles do vídeo -->
+    <div class="video-controls">
+        <button id="pausePlayBtn" onclick="toggleVideo()">
+            <span id="pausePlayIcon">⏸️</span>
+            <span id="pausePlayText">Pausar</span>
+        </button>
+        <button id="repeatBtn" onclick="repeatVideo()">
+            <span>🔁</span>
+            <span>Repetir</span>
+        </button>
+    </div>
+
+    <!-- Container de login -->
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="/dc-logo.png" alt="Logo Duque de Caxias" onerror="this.style.display='none'">
+            <h1>Dashboard</h1>
+            <div class="subtitle">Ouvidoria</div>
+            <div class="city-name">Duque de Caxias • RJ</div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    autocomplete="username"
+                    placeholder="Digite seu usuário"
+                    autofocus
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    autocomplete="current-password"
+                    placeholder="Digite sua senha"
+                >
+            </div>
+
+            <button type="submit" class="btn-login" id="loginButton">
+                Acessar Sistema
+            </button>
+        </form>
+
+        <div style="margin-top: 24px; text-align: center;">
+            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 12px;">
+                Não possui uma conta?
+            </p>
+            <a href="/cadastro" style="
+                display: inline-block;
+                padding: 12px 24px;
+                background: transparent;
+                color: var(--accent);
+                border: 1px solid var(--accent);
+                border-radius: 12px;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: 'Rajdhani', sans-serif;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+                transition: all 0.2s ease;
+            " onmouseover="this.style.background='var(--accent)'; this.style.color='white';" 
+               onmouseout="this.style.background='transparent'; this.style.color='var(--accent)';">
+                Criar Conta
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Gerenciamento de tema (mantido para compatibilidade)
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+
+        // Formulário de login
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const loginButton = document.getElementById('loginButton');
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        function setLoading(loading) {
+            if (loading) {
+                loginButton.disabled = true;
+                loginButton.innerHTML = '<span class="loading"></span>Conectando...';
+            } else {
+                loginButton.disabled = false;
+                loginButton.innerHTML = 'Acessar Sistema';
+            }
+        }
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                showError('Por favor, preencha todos os campos');
+                return;
+            }
+
+            setLoading(true);
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({ username, password })
+                });
+
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('Resposta não é JSON:', text);
+                    showError('Erro no servidor. Tente novamente.');
+                    setLoading(false);
+                    return;
+                }
+
+                const data = await response.json();
+
+                if (data.success) {
+                    loginButton.style.background = '#10b981';
+                    loginButton.innerHTML = 'Acesso Autorizado!';
+                    
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 600);
+                } else {
+                    showError(data.message || 'Erro ao fazer login');
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error('Erro no login:', error);
+                showError('Erro de conexão. Verifique sua internet.');
+                setLoading(false);
+            }
+        });
+
+        // Controles do vídeo
+        const backgroundVideo = document.getElementById('backgroundVideo');
+        const pausePlayBtn = document.getElementById('pausePlayBtn');
+        const pausePlayIcon = document.getElementById('pausePlayIcon');
+        const pausePlayText = document.getElementById('pausePlayText');
+        let isPlaying = true;
+
+        // Iniciar vídeo automaticamente
+        backgroundVideo.play().catch(err => {
+            console.log('Erro ao reproduzir vídeo automaticamente:', err);
+        });
+
+        function toggleVideo() {
+            if (isPlaying) {
+                backgroundVideo.pause();
+                pausePlayIcon.textContent = '▶️';
+                pausePlayText.textContent = 'Reproduzir';
+                isPlaying = false;
+            } else {
+                backgroundVideo.play();
+                pausePlayIcon.textContent = '⏸️';
+                pausePlayText.textContent = 'Pausar';
+                isPlaying = true;
+            }
+        }
+
+        function repeatVideo() {
+            backgroundVideo.currentTime = 0;
+            backgroundVideo.play();
+            isPlaying = true;
+            pausePlayIcon.textContent = '⏸️';
+            pausePlayText.textContent = 'Pausar';
+        }
+
+        // Atualizar estado quando vídeo terminar (para loop)
+        backgroundVideo.addEventListener('ended', () => {
+            backgroundVideo.currentTime = 0;
+            backgroundVideo.play();
+        });
+
+        // Verificar se já está autenticado
+        let authCheckDone = false;
+        (async () => {
+            if (authCheckDone) return;
+            authCheckDone = true;
+            
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                
+                const response = await fetch('/api/auth/me', {
+                    credentials: 'include',
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success && data.user) {
+                        window.location.href = '/dashboard';
+                        return;
+                    }
+                }
+            } catch (error) {
+                // Não autenticado, continuar na página de login
+            }
+        })();
+    </script>
+</body>
+</html>
+

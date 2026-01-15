@@ -1,0 +1,607 @@
+{
+  "metadata": {
+    "dataGeracao": "2026-01-15T12:53:12.947Z",
+    "totalUnidades": 34,
+    "comTelefone": 24,
+    "semTelefone": 10,
+    "bairrosNormalizados": 1
+  },
+  "unidades": [
+    {
+      "codigo": "saude_27",
+      "numero": 27,
+      "nome": "Centro de Atenção ao Portador de Deficiências - CEAPD (CER II)",
+      "nomeNormalizado": "centro de atenção ao portador de deficiências - ceapd (cer ii)",
+      "tipo": "CAPS",
+      "distrito": 1,
+      "bairro": "Centro",
+      "bairroOriginal": "Centro",
+      "endereco": "Rua Nilo Vieira, 353 – Centro – Duque de Caxias – RJ",
+      "cep": "25020-000",
+      "telefone": "(21) 3774-4020",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_22",
+      "numero": 22,
+      "nome": "Centro de Atenção Psicossocial – CAPS LESLIE SANFORD CHAVIN",
+      "nomeNormalizado": "centro de atenção psicossocial – caps leslie sanford chavin",
+      "tipo": "CAPS",
+      "distrito": 1,
+      "bairro": "25 de Agosto",
+      "bairroOriginal": "25 de Agosto",
+      "endereco": "Rua Marechal Deodoro, 147 – Jardim Vinte e Cinco de Agosto – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2671-5806 / (21) 959068093",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_24",
+      "numero": 24,
+      "nome": "Centro de Atenção Psicossocial Infanto-Juvenil – CAPSIJ",
+      "nomeNormalizado": "centro de atenção psicossocial infanto-juvenil – capsij",
+      "tipo": "CAPS",
+      "distrito": 1,
+      "bairro": "25 de Agosto",
+      "bairroOriginal": "25 de Agosto",
+      "endereco": "Rua Marechal Floriano, 966 – Jardim Vinte e Cinco de Agosto – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2672-3888 / (21) 2772-7569 / (21) 959069132",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_23",
+      "numero": 23,
+      "nome": "Centro de Atenção Psicossocial para Usuários de Álcool e Outras Drogas Renato Russo – CAPS AD",
+      "nomeNormalizado": "centro de atenção psicossocial para usuários de álcool e outras drogas renato russo – caps ad",
+      "tipo": "CAPS",
+      "distrito": 1,
+      "bairro": "Centro",
+      "bairroOriginal": "Centro",
+      "endereco": "Rua Nilo Vieira, 353 – Centro – Duque de Caxias – RJ",
+      "cep": "25020-000",
+      "telefone": "(21) 2673-6144 / (21) 986675624",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_28",
+      "numero": 28,
+      "nome": "Centro de Atenção Total ao Adolescente – CEATA",
+      "nomeNormalizado": "centro de atenção total ao adolescente – ceata",
+      "tipo": "CAPS",
+      "distrito": 1,
+      "bairro": "Parque Senhor do Bonfim",
+      "bairroOriginal": "Parque Senhor do Bonfim",
+      "endereco": "Rua Manoel Lucas, s/nº - Parque Senhor do Bonfim – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2772-7308 / (21) 2652-2986",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_32",
+      "numero": 32,
+      "nome": "Centro de Especialidade Odontológica (Centro)",
+      "nomeNormalizado": "centro de especialidade odontológica (centro)",
+      "tipo": "CEO",
+      "distrito": 1,
+      "bairro": "Centro",
+      "bairroOriginal": "Centro",
+      "endereco": "Rua gen. Gurjão s/n – Centro / Duque de Caxias",
+      "cep": "25020-000",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_33",
+      "numero": 33,
+      "nome": "Centro de Especialidade Odontológica (CEO PRAINHA)",
+      "nomeNormalizado": "centro de especialidade odontológica (ceo prainha)",
+      "tipo": "CEO",
+      "distrito": 1,
+      "bairro": "Bar dos Cavaleiros",
+      "bairroOriginal": "Bar dos Cavaleiros",
+      "endereco": "Av. Dr. Manoel Teles, 1714, Bar dos Cavaleiros – Duque de Caxias - RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 3657-9013",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_29",
+      "numero": 29,
+      "nome": "Centro Especialização em Reabilitação – CER IV",
+      "nomeNormalizado": "centro especialização em reabilitação – cer iv",
+      "tipo": "CAPS",
+      "distrito": 1,
+      "bairro": "Sarapuí",
+      "bairroOriginal": "Sarapuí",
+      "endereco": "Av. República do Paraguai, s/nº - Sarapuí – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_2",
+      "numero": 2,
+      "nome": "Centro Municipal de Saúde de Duque de Caxias (CMSDC)",
+      "nomeNormalizado": "centro municipal de saúde de duque de caxias (cmsdc)",
+      "tipo": "Especializada",
+      "distrito": 1,
+      "bairro": "Centro",
+      "bairroOriginal": "Centro",
+      "endereco": "Rua General Gurjão, s/nº - Centro – Duque de Caxias – RJ",
+      "cep": "25020-000",
+      "telefone": "(21) 2671-7659 / 2771-4682",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_5",
+      "numero": 5,
+      "nome": "Hospital Infantil Ismélia da Silveira",
+      "nomeNormalizado": "hospital infantil ismélia da silveira",
+      "tipo": "Hospital",
+      "distrito": 1,
+      "bairro": "Centro",
+      "bairroOriginal": "Centro",
+      "endereco": "Avenida Presidente Kennedy, s/nº - Centro – Duque de Caxias – RJ",
+      "cep": "25020-000",
+      "telefone": "(21) 2671-7477 / 2671-7702",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_4",
+      "numero": 4,
+      "nome": "Hospital Municipal Do Olho Júlio Cândido de Brito",
+      "nomeNormalizado": "hospital municipal do olho júlio cândido de brito",
+      "tipo": "Hospital",
+      "distrito": 1,
+      "bairro": "Doutor Laureano",
+      "bairroOriginal": "Doutor Laureano",
+      "endereco": "Doutor Lauriano, Nº1145 – Duque de Caxias – RJ",
+      "cep": "25.060-220",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_7",
+      "numero": 7,
+      "nome": "Hospital Municipal Dr. Moacyr Rodrigues do Carmo",
+      "nomeNormalizado": "hospital municipal dr. moacyr rodrigues do carmo",
+      "tipo": "Hospital",
+      "distrito": 1,
+      "bairro": "Beira Mar",
+      "bairroOriginal": "Beira Mar",
+      "endereco": "Rodovia Washington Luiz, 3200 – Beira Mar – Duque de Caxias – RJ",
+      "cep": "25010-000",
+      "telefone": "(21) 2671-0671 / 2671-6285 / 2672-1090",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_3",
+      "numero": 3,
+      "nome": "Hospital Municipal São José - CORAÇÃO",
+      "nomeNormalizado": "hospital municipal são josé - coração",
+      "tipo": "Hospital",
+      "distrito": 1,
+      "bairro": "Vila Flavia",
+      "bairroOriginal": "Vila Flavia",
+      "endereco": "Rua Nobre de Lacerda, 36 - Vila Flavia – Duque de Caxias – RJ",
+      "cep": "25010-260",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_9",
+      "numero": 9,
+      "nome": "Policlínica Hospital Duque de Caxias",
+      "nomeNormalizado": "policlínica hospital duque de caxias",
+      "tipo": "Policlínica",
+      "distrito": 1,
+      "bairro": "Parque Senhor do Bonfim",
+      "bairroOriginal": "Parque Senhor do Bonfim",
+      "endereco": "Rua Manoel Lucas, s/nº - Parque Senhor do Bonfim – Duque de Caxias",
+      "cep": "25000-000",
+      "telefone": "(21) 3652-4012",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_34",
+      "numero": 34,
+      "nome": "Posto Odontológico Professor José de Souza Herdy",
+      "nomeNormalizado": "posto odontológico professor josé de souza herdy",
+      "tipo": "CEO",
+      "distrito": 1,
+      "bairro": "Parque Felicidade",
+      "bairroOriginal": "Parque Felicidade",
+      "endereco": "Rua Parque Alcino Guanabara, s/nº - Parque Felicidade – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2650-1295",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_12",
+      "numero": 12,
+      "nome": "UPA Infantil Walter Garcia",
+      "nomeNormalizado": "upa infantil walter garcia",
+      "tipo": "UPA",
+      "distrito": 1,
+      "bairro": "Centro",
+      "bairroOriginal": "Centro",
+      "endereco": "Avenida Presidente Kennedy, s/nº - Centro – Duque de Caxias – RJ",
+      "cep": "25020-000",
+      "telefone": "(21) 2772-8301 / 2782-2152",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_15",
+      "numero": 15,
+      "nome": "UPA LAFAIETE",
+      "nomeNormalizado": "upa lafaiete",
+      "tipo": "UPA",
+      "distrito": 1,
+      "bairro": "Parque Lafaiete",
+      "bairroOriginal": "Parque Lafaiete",
+      "endereco": "R: Joaquim Peçanha s/nº - 1532 – Parque Lafaiete – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_13",
+      "numero": 13,
+      "nome": "UPA Parque Beira Mar",
+      "nomeNormalizado": "upa parque beira mar",
+      "tipo": "UPA",
+      "distrito": 1,
+      "bairro": "Beira Mar",
+      "bairroOriginal": "Beira Mar",
+      "endereco": "Rodovia Washington Luiz, 3200 – Beira Mar – Duque de Caxias – RJ",
+      "cep": "25010-000",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_14",
+      "numero": 14,
+      "nome": "UPA SARAPUÍ",
+      "nomeNormalizado": "upa sarapuí",
+      "tipo": "UPA",
+      "distrito": 1,
+      "bairro": "Sarapuí",
+      "bairroOriginal": "Sarapuí",
+      "endereco": "Av. República do Paraguai, s/nº - Vila Sarapuí – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 3134-7-0239",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_8",
+      "numero": 8,
+      "nome": "Hospital Adão Pereira Nunes – HMAPN",
+      "nomeNormalizado": "hospital adão pereira nunes – hmapn",
+      "tipo": "Hospital",
+      "distrito": 2,
+      "bairro": "Jardim Primavera",
+      "bairroOriginal": "Jardim Primavera",
+      "endereco": "Rodovia Washington Luiz, s/n, km109. Jardim Primavera – Duque de Caxias – RJ",
+      "cep": "25225-015",
+      "telefone": "(21) 2777-9070",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_16",
+      "numero": 16,
+      "nome": "UPH Campos Elíseos",
+      "nomeNormalizado": "uph campos elíseos",
+      "tipo": "UPH",
+      "distrito": 2,
+      "bairro": "Campos Elíseos",
+      "bairroOriginal": "Campos Elíseos",
+      "endereco": "Av. Actura, 333 – Campos Elíseos – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2776-0318",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_19",
+      "numero": 19,
+      "nome": "UPH Pilar",
+      "nomeNormalizado": "uph pilar",
+      "tipo": "UPH",
+      "distrito": 2,
+      "bairro": "Pilar",
+      "bairroOriginal": "Pilar",
+      "endereco": "Rua Carlos Alvear s/nº - Pilar – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2776-1654",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_20",
+      "numero": 20,
+      "nome": "UPH Saracuruna",
+      "nomeNormalizado": "uph saracuruna",
+      "tipo": "UPH",
+      "distrito": 2,
+      "bairro": "Saracuruna",
+      "bairroOriginal": "Saracuruna",
+      "endereco": "Av. Presidente Roosevelt, s/nº - Saracuruna – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2678-8345",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_26",
+      "numero": 26,
+      "nome": "Centro de Atenção Psicossocial – CAPS Imbariê",
+      "nomeNormalizado": "centro de atenção psicossocial – caps imbariê",
+      "tipo": "CAPS",
+      "distrito": 3,
+      "bairro": "Imbariê",
+      "bairroOriginal": "Imbariê",
+      "endereco": "Rua Projetada 02 – Lt 11 QD 03 – Imbariê – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 3661-0891 / (21) 993977976",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_30",
+      "numero": 30,
+      "nome": "Centro de Especialidade Odontológica (CEO Imbariê)",
+      "nomeNormalizado": "centro de especialidade odontológica (ceo imbariê)",
+      "tipo": "CEO",
+      "distrito": 3,
+      "bairro": "Imbariê",
+      "bairroOriginal": "Imbariê",
+      "endereco": "Rua Feliciano Sodré, s/nº – Imbariê – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 3661-4271",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_6",
+      "numero": 6,
+      "nome": "Hospital Infantil de Parada Angélica Padre Guilherme",
+      "nomeNormalizado": "hospital infantil de parada angélica padre guilherme",
+      "tipo": "Hospital",
+      "distrito": 3,
+      "bairro": "Parada Angélica",
+      "bairroOriginal": "Parada Angélica",
+      "endereco": "Avaristo de Morais, s/n – Parada Angélica - Duque de Caxias – RJ",
+      "cep": "25272-560",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_10",
+      "numero": 10,
+      "nome": "Maternidade Municipal Santa Cruz da Serra",
+      "nomeNormalizado": "maternidade municipal santa cruz da serra",
+      "tipo": "Maternidade",
+      "distrito": 3,
+      "bairro": "Santa Cruz da Serra",
+      "bairroOriginal": "Santa Cruz da Serra",
+      "endereco": "Avenida Automóvel Clube, esquina com a Rua Alagoas, lote 25, Quadra A, Loteamento Vila Santa Cruz – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_17",
+      "numero": 17,
+      "nome": "UPH Imbariê",
+      "nomeNormalizado": "uph imbariê",
+      "tipo": "UPH",
+      "distrito": 3,
+      "bairro": "Imbariê",
+      "bairroOriginal": "Imbariê",
+      "endereco": "Rua Catarina, s/nº - Imbariê – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2678-0014",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_18",
+      "numero": 18,
+      "nome": "UPH Parque Equitativa",
+      "nomeNormalizado": "uph parque equitativa",
+      "tipo": "UPH",
+      "distrito": 3,
+      "bairro": "Parque Equitativa",
+      "bairroOriginal": "Parque Equitativa",
+      "endereco": "Av. Automóvel Clube, s/nº - Parque Equitativa – Duque de Caxias – RJ",
+      "cep": "25000-000",
+      "telefone": "(21) 2679-2040",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_25",
+      "numero": 25,
+      "nome": "Centro de Atenção Psicossocial para Usuários de Álcool e Outras Drogas - CAPS AD XERÉM",
+      "nomeNormalizado": "centro de atenção psicossocial para usuários de álcool e outras drogas - caps ad xerém",
+      "tipo": "CAPS",
+      "distrito": 4,
+      "bairro": "Mantiqueira",
+      "bairroOriginal": "Mantiquira",
+      "endereco": "Rua Márcio Santos Silva, 77 – Mantiqueira - Xerém - RJ",
+      "cep": "25272-560",
+      "telefone": "(21) 988032550",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_31",
+      "numero": 31,
+      "nome": "Centro de Especialidade Odontológica (CEO Xerém)",
+      "nomeNormalizado": "centro de especialidade odontológica (ceo xerém)",
+      "tipo": "CEO",
+      "distrito": 4,
+      "bairro": "Xerém",
+      "bairroOriginal": "Xerém",
+      "endereco": "Av. Venância, s/nº (Terminal Rodoviário) – Xerém – Duque de Caxias – RJ",
+      "cep": "25272-560",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_11",
+      "numero": 11,
+      "nome": "Centro de Fisioterapia Pastor Norival Franco (Xerém)",
+      "nomeNormalizado": "centro de fisioterapia pastor norival franco (xerém)",
+      "tipo": "Especializada",
+      "distrito": 4,
+      "bairro": "Xerém",
+      "bairroOriginal": "Xerém",
+      "endereco": "Av. Pastor Manoel Avelino de Souza, 27 - Xerém – Duque de Caxias – RJ",
+      "cep": "25272-560",
+      "telefone": null,
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_1",
+      "numero": 1,
+      "nome": "Centro de Referência e Atenção Especializada à Saúde da Mulher (CRAESM)",
+      "nomeNormalizado": "centro de referência e atenção especializada à saúde da mulher (craesm)",
+      "tipo": "Especializada",
+      "distrito": 4,
+      "bairro": "Xerém",
+      "bairroOriginal": "Xerém",
+      "endereco": "Rua Vinte e Cinco de Agosto, 01 - Xerém – Duque de Caxias – RJ",
+      "cep": "25272-560",
+      "telefone": "(21) 3658-4184 / 3658-4203",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    },
+    {
+      "codigo": "saude_21",
+      "numero": 21,
+      "nome": "UPH Xerém",
+      "nomeNormalizado": "uph xerém",
+      "tipo": "UPH",
+      "distrito": 4,
+      "bairro": "Xerém",
+      "bairroOriginal": "Xerém",
+      "endereco": "Rua Nóbrega Ribeiro, s/nº - Xerém – Duque de Caxias – RJ",
+      "cep": "25272-560",
+      "telefone": "(21) 2679-1837",
+      "coordenadas": {
+        "lat": null,
+        "lng": null
+      }
+    }
+  ],
+  "estatisticas": {
+    "porTipo": {
+      "Especializada": 3,
+      "Hospital": 6,
+      "Policlínica": 1,
+      "Maternidade": 1,
+      "UPA": 4,
+      "UPH": 6,
+      "CAPS": 8,
+      "CEO": 5
+    },
+    "porDistrito": {
+      "1": 19,
+      "2": 4,
+      "3": 6,
+      "4": 5
+    }
+  }
+}

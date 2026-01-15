@@ -1,0 +1,83 @@
+# Dependências
+node_modules/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Cache e dados temporários
+db-data/
+.cache/
+.temp/
+tmp/
+temp/
+.npm
+.eslintcache
+
+# Arquivos de build
+dist/
+build/
+
+# Testes e coverage
+coverage/
+.nyc_output/
+test-results/
+
+# Arquivos sensíveis (NÃO COMMITAR)
+.env
+google-credentials.json
+*.pem
+*.key
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+*.bak
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+
+# Arquivos grandes
+*.mp4
+*.avi
+*.mov
+*.zip
+*.tar.gz
+*.rar
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+pip-log.txt
+pip-delete-this-directory.txt
+.Python
+env/
+venv/
+ENV/
+
+# NPM
+package-lock.json
+yarn.lock
+
+# Outros
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

@@ -1,0 +1,1096 @@
+{
+  "metadata": {
+    "dataGeracao": "2026-01-15T12:51:35.423Z",
+    "totalBairros": 77,
+    "duplicacoesResolvidas": 0,
+    "variacoesMapeadas": 7
+  },
+  "bairros": [
+    {
+      "nome": "25 de Agosto",
+      "nomeNormalizado": "25 de agosto",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 0,
+        "secretarias": 8,
+        "unidades_saude": 0,
+        "total": 8
+      },
+      "aliases": [
+        "25 de Agosto"
+      ]
+    },
+    {
+      "nome": "Centro",
+      "nomeNormalizado": "centro",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 7,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 7
+      },
+      "aliases": [
+        "Centro"
+      ]
+    },
+    {
+      "nome": "Doutor Laureano",
+      "nomeNormalizado": "doutor laureano",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Doutor Laureano"
+      ]
+    },
+    {
+      "nome": "Engenho do Porto",
+      "nomeNormalizado": "engenho do porto",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Engenho do Porto"
+      ]
+    },
+    {
+      "nome": "Gramacho",
+      "nomeNormalizado": "gramacho",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Gramacho"
+      ]
+    },
+    {
+      "nome": "Jardim 25 de Agosto",
+      "nomeNormalizado": "jardim 25 de agosto",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Jardim 25 de Agosto"
+      ]
+    },
+    {
+      "nome": "Jardim Gramacho",
+      "nomeNormalizado": "jardim gramacho",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 7,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 7
+      },
+      "aliases": [
+        "Jardim Gramacho",
+        "Jardim Granacho"
+      ]
+    },
+    {
+      "nome": "Jardim Leal",
+      "nomeNormalizado": "jardim leal",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Jardim Leal"
+      ]
+    },
+    {
+      "nome": "Jardim Vinte e Cinco de Agosto",
+      "nomeNormalizado": "jardim vinte e cinco de agosto",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Jardim Vinte e Cinco de Agosto"
+      ]
+    },
+    {
+      "nome": "Olavo Bilac",
+      "nomeNormalizado": "olavo bilac",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 6,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 6
+      },
+      "aliases": [
+        "Olavo Bilac"
+      ]
+    },
+    {
+      "nome": "Parque Beira Mar",
+      "nomeNormalizado": "parque beira mar",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Parque Beira Mar"
+      ]
+    },
+    {
+      "nome": "Parque Boa Vista II",
+      "nomeNormalizado": "parque boa vista ii",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Parque Boa Vista II"
+      ]
+    },
+    {
+      "nome": "Parque Centenário",
+      "nomeNormalizado": "parque centenário",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque Centenário"
+      ]
+    },
+    {
+      "nome": "Parque das Missões",
+      "nomeNormalizado": "parque das missões",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque das Missões"
+      ]
+    },
+    {
+      "nome": "Parque Duque",
+      "nomeNormalizado": "parque duque",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 0,
+        "secretarias": 3,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Parque Duque"
+      ]
+    },
+    {
+      "nome": "Parque Felicidade",
+      "nomeNormalizado": "parque felicidade",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Parque Felicidade"
+      ]
+    },
+    {
+      "nome": "Parque Lafaiete",
+      "nomeNormalizado": "parque lafaiete",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 6,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 6
+      },
+      "aliases": [
+        "Parque Lafaiete"
+      ]
+    },
+    {
+      "nome": "Parque Paulicéia",
+      "nomeNormalizado": "parque paulicéia",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque Paulicéia"
+      ]
+    },
+    {
+      "nome": "Trevo das Missões",
+      "nomeNormalizado": "trevo das missões",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Trevo das Missões",
+        "Trevo sdas Missões"
+      ]
+    },
+    {
+      "nome": "Vila Centenário",
+      "nomeNormalizado": "vila centenário",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 5,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 5
+      },
+      "aliases": [
+        "Vila Centenário"
+      ]
+    },
+    {
+      "nome": "Vila Guanabara",
+      "nomeNormalizado": "vila guanabara",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Vila Guanabara"
+      ]
+    },
+    {
+      "nome": "Vila Itamarati",
+      "nomeNormalizado": "vila itamarati",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Vila Itamarati"
+      ]
+    },
+    {
+      "nome": "Vila Leopoldina",
+      "nomeNormalizado": "vila leopoldina",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 5,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 5
+      },
+      "aliases": [
+        "Vila Leopoldina"
+      ]
+    },
+    {
+      "nome": "Vila Meriti",
+      "nomeNormalizado": "vila meriti",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 0,
+        "secretarias": 1,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Meriti"
+      ]
+    },
+    {
+      "nome": "Vila Operária",
+      "nomeNormalizado": "vila operária",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Vila Operária"
+      ]
+    },
+    {
+      "nome": "Vila São Luís",
+      "nomeNormalizado": "vila são luís",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 5,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 5
+      },
+      "aliases": [
+        "Vila São Luís",
+        "Vila São Luiz"
+      ]
+    },
+    {
+      "nome": "Vila São Sebastião",
+      "nomeNormalizado": "vila são sebastião",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila São Sebastião"
+      ]
+    },
+    {
+      "nome": "Vila Sarapuí",
+      "nomeNormalizado": "vila sarapuí",
+      "distrito": 1,
+      "estatisticas": {
+        "escolas": 4,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 4
+      },
+      "aliases": [
+        "Vila Sarapuí"
+      ]
+    },
+    {
+      "nome": "Campos Elíseos",
+      "nomeNormalizado": "campos elíseos",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Campos Elíseos"
+      ]
+    },
+    {
+      "nome": "Cangulo",
+      "nomeNormalizado": "cangulo",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Cangulo"
+      ]
+    },
+    {
+      "nome": "Chácaras Arcampo",
+      "nomeNormalizado": "chácaras arcampo",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Chácaras Arcampo"
+      ]
+    },
+    {
+      "nome": "Chácaras Rio-Petrópolis",
+      "nomeNormalizado": "chácaras rio-petrópolis",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 16,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 16
+      },
+      "aliases": [
+        "Chácaras Rio-Petrópolis"
+      ]
+    },
+    {
+      "nome": "Fonseca",
+      "nomeNormalizado": "fonseca",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Fonseca"
+      ]
+    },
+    {
+      "nome": "Jardim Balneário Ana Clara",
+      "nomeNormalizado": "jardim balneário ana clara",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Jardim Balneário Ana Clara"
+      ]
+    },
+    {
+      "nome": "Jardim Primavera",
+      "nomeNormalizado": "jardim primavera",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 6,
+        "secretarias": 12,
+        "unidades_saude": 0,
+        "total": 18
+      },
+      "aliases": [
+        "Jardim Primavera"
+      ]
+    },
+    {
+      "nome": "Loteamento Jardim São Paulo/Bom Retiro",
+      "nomeNormalizado": "loteamento jardim são paulo/bom retiro",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Loteamento Jardim São Paulo/Bom Retiro"
+      ]
+    },
+    {
+      "nome": "Nossa Senhora do Carmo",
+      "nomeNormalizado": "nossa senhora do carmo",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Nossa Senhora do Carmo"
+      ]
+    },
+    {
+      "nome": "Parque Eldorado",
+      "nomeNormalizado": "parque eldorado",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Parque Eldorado"
+      ]
+    },
+    {
+      "nome": "Parque Fluminense",
+      "nomeNormalizado": "parque fluminense",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 4,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 4
+      },
+      "aliases": [
+        "Parque Fluminense"
+      ]
+    },
+    {
+      "nome": "Parque Independência",
+      "nomeNormalizado": "parque independência",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque Independência"
+      ]
+    },
+    {
+      "nome": "Parque Marilandia",
+      "nomeNormalizado": "parque marilandia",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Parque Marilandia"
+      ]
+    },
+    {
+      "nome": "Parque Uruguaiana",
+      "nomeNormalizado": "parque uruguaiana",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Parque Uruguaiana"
+      ]
+    },
+    {
+      "nome": "Petrópolis",
+      "nomeNormalizado": "petrópolis",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Petrópolis",
+        "Petropólis"
+      ]
+    },
+    {
+      "nome": "Pilar",
+      "nomeNormalizado": "pilar",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 5,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 5
+      },
+      "aliases": [
+        "Pilar"
+      ]
+    },
+    {
+      "nome": "Santo Antônio",
+      "nomeNormalizado": "santo antônio",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Santo Antônio"
+      ]
+    },
+    {
+      "nome": "São Bento",
+      "nomeNormalizado": "são bento",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 5,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 5
+      },
+      "aliases": [
+        "São Bento",
+        "S. Bento"
+      ]
+    },
+    {
+      "nome": "São Judas Tadeu",
+      "nomeNormalizado": "são judas tadeu",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "São Judas Tadeu"
+      ]
+    },
+    {
+      "nome": "Saracuruna",
+      "nomeNormalizado": "saracuruna",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 4,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 4
+      },
+      "aliases": [
+        "Saracuruna"
+      ]
+    },
+    {
+      "nome": "Silva Cardoso",
+      "nomeNormalizado": "silva cardoso",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Silva Cardoso"
+      ]
+    },
+    {
+      "nome": "Vila Santa Cruz",
+      "nomeNormalizado": "vila santa cruz",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Vila Santa Cruz"
+      ]
+    },
+    {
+      "nome": "Vila Santo Antônio",
+      "nomeNormalizado": "vila santo antônio",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Vila Santo Antônio"
+      ]
+    },
+    {
+      "nome": "Vila São José",
+      "nomeNormalizado": "vila são josé",
+      "distrito": 2,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila São José"
+      ]
+    },
+    {
+      "nome": "Jardim Anhangá",
+      "nomeNormalizado": "jardim anhangá",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 7,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 7
+      },
+      "aliases": [
+        "Jardim Anhangá",
+        "Jd. Anhangá"
+      ]
+    },
+    {
+      "nome": "Jardim Barro Branco",
+      "nomeNormalizado": "jardim barro branco",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Jardim Barro Branco"
+      ]
+    },
+    {
+      "nome": "Jardim Imbariê",
+      "nomeNormalizado": "jardim imbariê",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 6,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 6
+      },
+      "aliases": [
+        "Jardim Imbariê"
+      ]
+    },
+    {
+      "nome": "km 53  Taquara",
+      "nomeNormalizado": "km 53  taquara",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "km 53  Taquara"
+      ]
+    },
+    {
+      "nome": "Nova Campinas",
+      "nomeNormalizado": "nova campinas",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 4,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 4
+      },
+      "aliases": [
+        "Nova Campinas"
+      ]
+    },
+    {
+      "nome": "Parada Angélica",
+      "nomeNormalizado": "parada angélica",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Parada Angélica"
+      ]
+    },
+    {
+      "nome": "Parada Morabi",
+      "nomeNormalizado": "parada morabi",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parada Morabi"
+      ]
+    },
+    {
+      "nome": "Parque Equitativa",
+      "nomeNormalizado": "parque equitativa",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque Equitativa"
+      ]
+    },
+    {
+      "nome": "Parque Estrela",
+      "nomeNormalizado": "parque estrela",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque Estrela"
+      ]
+    },
+    {
+      "nome": "Parque Paulista",
+      "nomeNormalizado": "parque paulista",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Parque Paulista"
+      ]
+    },
+    {
+      "nome": "Parque Santa Rosa",
+      "nomeNormalizado": "parque santa rosa",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Parque Santa Rosa"
+      ]
+    },
+    {
+      "nome": "Santa Cruz da Serra",
+      "nomeNormalizado": "santa cruz da serra",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Santa Cruz da Serra"
+      ]
+    },
+    {
+      "nome": "Santa Lúcia",
+      "nomeNormalizado": "santa lúcia",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Santa Lúcia"
+      ]
+    },
+    {
+      "nome": "Taquara",
+      "nomeNormalizado": "taquara",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Taquara"
+      ]
+    },
+    {
+      "nome": "Vila Angélica",
+      "nomeNormalizado": "vila angélica",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Angélica"
+      ]
+    },
+    {
+      "nome": "Vila Araci (Imbariê)",
+      "nomeNormalizado": "vila araci (imbariê)",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Araci (Imbariê)"
+      ]
+    },
+    {
+      "nome": "Vila Bernadete",
+      "nomeNormalizado": "vila bernadete",
+      "distrito": 3,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Bernadete"
+      ]
+    },
+    {
+      "nome": "Amapá",
+      "nomeNormalizado": "amapá",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Amapá"
+      ]
+    },
+    {
+      "nome": "Jardim Olimpo",
+      "nomeNormalizado": "jardim olimpo",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Jardim Olimpo"
+      ]
+    },
+    {
+      "nome": "Mantiqueira",
+      "nomeNormalizado": "mantiqueira",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 3,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 3
+      },
+      "aliases": [
+        "Mantiqueira",
+        "Mantiquira"
+      ]
+    },
+    {
+      "nome": "Parque Xerém",
+      "nomeNormalizado": "parque xerém",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 5,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 5
+      },
+      "aliases": [
+        "Parque Xerém"
+      ]
+    },
+    {
+      "nome": "Vila Bonança",
+      "nomeNormalizado": "vila bonança",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Bonança"
+      ]
+    },
+    {
+      "nome": "Vila Canaan",
+      "nomeNormalizado": "vila canaan",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Canaan"
+      ]
+    },
+    {
+      "nome": "Vila Santa Alice",
+      "nomeNormalizado": "vila santa alice",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 1,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 1
+      },
+      "aliases": [
+        "Vila Santa Alice"
+      ]
+    },
+    {
+      "nome": "Xerém",
+      "nomeNormalizado": "xerém",
+      "distrito": 4,
+      "estatisticas": {
+        "escolas": 2,
+        "secretarias": 0,
+        "unidades_saude": 0,
+        "total": 2
+      },
+      "aliases": [
+        "Xerém"
+      ]
+    }
+  ],
+  "duplicacoes": []
+}
