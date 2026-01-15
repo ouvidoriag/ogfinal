@@ -1,0 +1,241 @@
+{
+  "inicio": "2025-12-11T17:44:35.794Z",
+  "fim": "2025-12-11T17:46:14.145Z",
+  "categorias": {
+    "sintaxe": {
+      "total": 201,
+      "passou": 201,
+      "falhou": 0,
+      "pulou": 0,
+      "detalhes": []
+    },
+    "apis": {
+      "total": 3,
+      "passou": 1,
+      "falhou": 2,
+      "pulou": 0,
+      "detalhes": [
+        {
+          "teste": "Validação de Endpoints",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:validate\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:validate\n> node scripts/test/validate-endpoints.js\n\n🔍 Validando todos os endpoints...\n\n❌ Dashboard Data: FAILED (401)\n\n❌ Summary: FAILED (401)\n\n❌ Records: FAILED (401)\n\n❌ Filter Aggregated: FAILED (401)\n\n❌ Filter: FAILED (401)\n\n═══════════════════════════════════════\n✅ Passou: 0\n❌ Falhou: 5\n═══════════════════════════════════════\n\n",
+          "timestamp": "2025-12-11T17:45:12.091Z"
+        },
+        {
+          "teste": "Teste de Todas as APIs",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:apis\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:apis\n> node scripts/test/test-all-apis.js\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  TESTE COMPLETO - APIs, KPIs e FILTROS                    ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nBase URL: http://localhost:3000\n\n\u001b[36m▶ Conectividade do servidor\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401\n\n\u001b[36m▶ GET /api/dashboard-data - Estrutura completa\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ GET /api/summary - KPIs principais\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ POST /api/filter/aggregated - Sem filtros (estrutura vazia)\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ POST /api/filter/aggregated - Filtro por Status\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter status válido\n\n\u001b[36m▶ POST /api/filter/aggregated - Filtro por Canal\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter canal válido\n\n\u001b[36m▶ POST /api/filter/aggregated - Múltiplos filtros simultâneos\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter dados do dashboard\n\n\u001b[36m▶ POST /api/filter - Filtro básico de registros\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter dados\n\n\u001b[36m▶ GET /api/records - Paginação básica\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ Performance: Comparar dashboard-data vs filter/aggregated\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Dashboard-data falhou\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  RESUMO DOS TESTES                                         ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nTotal de testes: 10\n\u001b[32m✓ Passou: 0\u001b[0m\n\u001b[31m✗ Falhou: 10\u001b[0m\n⏱️  Tempo total: 97ms\n\n\u001b[31mErros encontrados:\u001b[0m\n  • Conectividade do servidor: HTTP 401\n  • GET /api/dashboard-data - Estrutura completa: HTTP 401: Unauthorized\n  • GET /api/summary - KPIs principais: HTTP 401: Unauthorized\n  • POST /api/filter/aggregated - Sem filtros (estrutura vazia): HTTP 401: Unauthorized\n  • POST /api/filter/aggregated - Filtro por Status",
+          "timestamp": "2025-12-11T17:45:13.492Z"
+        },
+        {
+          "teste": "Teste de Endpoints e-SIC",
+          "status": "PASSOU",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:esic\n> node scripts/test/testEsicEndpoints.js\n\n🚀 Iniciando testes dos endpoints de e-SIC...\n\n📍 Base URL: http://localhost:3000\n\n\n🧪 Testando: Summary\n   URL: http://localhost:3000/api/esic/summary\n   ❌ Status: 401\n   ⚠️  Erro: { success: false, message: 'Autenticação necessária' }\n\n🧪 Testando: Stats\n   URL: http://localhost:3000/api/esic/stats\n   ❌ Status: 401\n   ⚠️  Erro: { success: false, message: 'Autenticação necessária' }\n\n🧪 Testando: Count by Status\n   URL: http://localhost:3000/api/esic/count-by?field=status\n   ❌ Status: 401\n   ⚠️  Erro: { success: false, message: 'Autenticação necessária' }\n\n🧪 Testando: Count by Tipo Informação\n   URL: http://localhost:3000/api/esic/count-by?field=tipoInformacao\n   ❌ Status: 401\n   ⚠️  Erro: { success: false, message: 'Autenticação necessária' }\n\n🧪 Testando: Count by Responsável\n   URL: http://localhost:3000/api/esic/count-by?field=responsavel\n   ❌ Status: 401\n   ⚠️  Erro: { success: false, message: 'Aute",
+          "timestamp": "2025-12-11T17:45:28.586Z"
+        }
+      ]
+    },
+    "kpis": {
+      "total": 1,
+      "passou": 0,
+      "falhou": 1,
+      "pulou": 0,
+      "detalhes": [
+        {
+          "teste": "Teste de KPIs",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:kpis\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:kpis\n> node scripts/test/test-kpis.js\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  TESTE DE KPIs E MÉTRICAS                                 ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nBase URL: http://localhost:3000\n\n\u001b[36m▶ Testando GET /api/dashboard-data\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401\n\n\u001b[36m▶ Testando GET /api/summary\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401\n\n\u001b[36m▶ Testando consistência entre endpoints\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível comparar (endpoints falharam)\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  RESUMO                                                    ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\n\u001b[32m✓ Passou: 0\u001b[0m\n\u001b[31m✗ Falhou: 3\u001b[0m\n\n",
+          "timestamp": "2025-12-11T17:45:14.674Z"
+        }
+      ]
+    },
+    "filtros": {
+      "total": 1,
+      "passou": 0,
+      "falhou": 1,
+      "pulou": 0,
+      "detalhes": [
+        {
+          "teste": "Teste de Filtros",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:filters\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:filters\n> node scripts/test/test-filters.js\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  TESTE DE FILTROS CROSSFILTER                            ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nBase URL: http://localhost:3000\n\n\u001b[36m▶ Obtendo valores de teste...\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter dados do dashboard\n\n",
+          "timestamp": "2025-12-11T17:45:15.897Z"
+        }
+      ]
+    },
+    "paginas": {
+      "total": 2,
+      "passou": 1,
+      "falhou": 1,
+      "pulou": 0,
+      "detalhes": [
+        {
+          "teste": "Teste de Páginas",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:pages\n\n❌ Erro ao executar testes: Could not find Chrome (ver. 142.0.7444.175). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: C:\\Users\\501379\\.cache\\puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:pages\n> node scripts/test/run-page-tests.js\n\n🧪 Script de Teste de Páginas e Gráficos\n\n✅ Servidor acessível em http://localhost:3000\n\n🚀 Iniciando testes com Puppeteer...\n\n",
+          "timestamp": "2025-12-11T17:45:21.168Z"
+        },
+        {
+          "teste": "Teste de Todas as Páginas",
+          "status": "PASSOU",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:all\n> node scripts/test/test-all-pages.js\n\n",
+          "timestamp": "2025-12-11T17:45:22.007Z"
+        }
+      ]
+    },
+    "integracao": {
+      "total": 3,
+      "passou": 1,
+      "falhou": 2,
+      "pulou": 0,
+      "detalhes": [
+        {
+          "teste": "Teste Crossfilter",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:crossfilter\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:crossfilter\n> node scripts/test/test-crossfilter.js\n\n\u001b[34m\n============================================================\u001b[0m\n\u001b[34m🧪 TESTE COMPLETO DO SISTEMA CROSSFILTER\u001b[0m\n\u001b[34m============================================================\n\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Status\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Status\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Status\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Status\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Tema\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Tema\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Tema\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Tema\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Orgaos\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Orgaos\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Orgaos\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Orgaos\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Tipo\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Tipo\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Tipo\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Tipo\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Canal\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Canal\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Canal\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Canal\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Prioridade\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Prioridade\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Prioridade\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Prioridade\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de UnidadeCadastro\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=UnidadeCadastro\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para UnidadeCadastro\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para UnidadeCadastro\u001b[0m\n\u001b[36mℹ️  \n📊 Testando combinações de filtros",
+          "timestamp": "2025-12-11T17:45:17.226Z"
+        },
+        {
+          "teste": "Teste Estrutura Crossfilter",
+          "status": "PASSOU",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:crossfilter:structure\n> node scripts/test/test-crossfilter-structure.js\n\n\u001b[34m\n============================================================\u001b[0m\n\u001b[34m🧪 TESTE DE ESTRUTURA DO SISTEMA CROSSFILTER\u001b[0m\n\u001b[34m============================================================\n\u001b[0m\n\u001b[36mℹ️  \n📁 Teste 1: Verificando arquivos principais\u001b[0m\n\u001b[32m✅ Módulo crossfilter-overview: public/scripts/core/crossfilter-overview.js\u001b[0m\n\u001b[32m✅ Página overview: public/scripts/pages/ouvidoria/overview.js\u001b[0m\n\u001b[32m✅ Script de teste browser: public/scripts/test/test-crossfilter-browser.js\u001b[0m\n\u001b[32m✅ Script de teste Node.js: scripts/test/test-crossfilter.js\u001b[0m\n\u001b[36mℹ️  \n🔧 Teste 2: Verificando funções principais\u001b[0m\n\u001b[32m✅ Objeto crossfilterOverview: Encontrado \"crossfilterOverview\"\u001b[0m\n\u001b[32m✅ Função setAllData: Encontrado \"setAllData(\"\u001b[0m\n\u001b[32m✅ Função getFilteredData: Encontrado \"getFilteredData(\"\u001b[0m\n\u001b[32m✅ Função toggleFilter: Encontrado \"toggleFilter(\"\u001b[0m\n\u001b[32m✅ Função clearAllF",
+          "timestamp": "2025-12-11T17:45:18.101Z"
+        },
+        {
+          "teste": "Teste de Agregações",
+          "status": "FALHOU",
+          "erro": "Command failed: npm run test:aggregation\n❌ Erro no teste: Error: API retornou status 401\n    at testAggregation (file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/test/test-aggregation-auto.js:31:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n",
+          "output": "\n> ouvidoria-dashboard@3.0.0 test:aggregation\n> node scripts/test/test-aggregation-auto.js\n\n🧪 Iniciando teste automatizado de agregação...\n\n1️⃣ Buscando dados filtrados da API...\n",
+          "timestamp": "2025-12-11T17:45:19.083Z"
+        }
+      ]
+    },
+    "dados": {
+      "total": 5,
+      "passou": 4,
+      "falhou": 0,
+      "pulou": 1,
+      "detalhes": [
+        {
+          "teste": "Verificar Todos os Protocolos",
+          "status": "PASSOU",
+          "output": "🔍 Verificando TODOS os Protocolos com Tempo > 60 dias\n\n================================================================================\n✅ Conectado ao MongoDB Atlas\n\n📊 Buscando todos os protocolos...\nTotal de protocolos no banco: 17563\n\n⚠️  Protocolos com tempo > 60 dias: 1453\n\n📋 Top 30 Protocolos com maior tempo:\n\n   1. Protocolo: PRT-C3665DE7BCE2B1FF\n      Mês: 2025-01\n      Criação: 2025-01-11\n      Conclusão: 2025-11-01\n      Tempo Calculado: 295 dias\n      Tempo Campo: N/A\n      Tempo Final: 295 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   2. Protocolo: PRT-7775A55ECD97A715\n      Mês: 2025-02\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02\n      Tempo Calculado: 294 dias\n      Tempo Campo: N/A\n      Tempo Final: 294 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   3. Protocolo: PRT-8AF1D412279A5E6D\n      Mês: 2025-02\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02\n      Tempo Calculado: 294 dias\n      Tempo Campo: N/A\n      Tempo Final: 294 dias\n      Campo temp",
+          "timestamp": "2025-12-11T17:45:35.936Z"
+        },
+        {
+          "teste": "Verificar Datas Inconsistentes",
+          "status": "PASSOU",
+          "output": "🔍 Verificando Datas Inconsistentes\n\n================================================================================\n✅ Conectado ao MongoDB Atlas\n\nTotal de protocolos no banco: 17563\n\nProtocolos com datas inconsistentes (> 200 dias ou conclusão futura): 249\n\n📋 Top 30 Protocolos com Datas Inconsistentes:\n\n   1. Protocolo: PRT-C3665DE7BCE2B1FF\n      Mês: 2025-01\n      Criação: 2025-01-11\n      Conclusão: 2025-11-01 \n      Tempo calculado: 295 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   2. Protocolo: PRT-7775A55ECD97A715\n      Mês: 2025-02\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02 \n      Tempo calculado: 294 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   3. Protocolo: PRT-8AF1D412279A5E6D\n      Mês: 2025-02\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02 \n      Tempo calculado: 294 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   4. Protocolo: PRT-8AF1D412279A5E6D-2\n      Mês: 2025-02\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02 \n      Tempo calculado: ",
+          "timestamp": "2025-12-11T17:45:44.442Z"
+        },
+        {
+          "teste": "Verificar Tempo de Conclusão",
+          "status": "PASSOU",
+          "output": "🔍 Verificando Tempo de Conclusão - Jan-Mai 2025\n\n================================================================================\n✅ Conectado ao MongoDB Atlas\n\nTotal de protocolos encontrados: 6515\n\nProtocolos com tempo calculado: 6411\n\n📊 Estatísticas de Tempo de Conclusão:\n   Mínimo: 1 dias\n   Máximo: 295 dias\n   Média: 18.4 dias\n\n⚠️  Protocolos com mais de 60 dias: 645\n\n📋 Primeiros 20 protocolos acima de 60 dias:\n   1. Protocolo: PRT-C3665DE7BCE2B1FF\n      Criação: 2025-01-11\n      Conclusão: 2025-11-01\n      Tempo: 295 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   2. Protocolo: PRT-7775A55ECD97A715\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02\n      Tempo: 294 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   3. Protocolo: PRT-8AF1D412279A5E6D\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02\n      Tempo: 294 dias\n      Campo tempoDeResolucaoEmDias: N/A\n\n   4. Protocolo: PRT-8AF1D412279A5E6D-2\n      Criação: 2025-02-12\n      Conclusão: 2025-12-02\n      Tempo: 294 di",
+          "timestamp": "2025-12-11T17:45:51.121Z"
+        },
+        {
+          "teste": "Verificar Duplicatas",
+          "status": "PASSOU",
+          "output": "14:45:59 [\u001b[32mdebug\u001b[39m]: Logger inicializado {\n  \"environment\": \"development\"\n}\r\n🔍 Verificando duplicatas e inconsistências...\n\n14:46:01 [\u001b[32minfo\u001b[39m]: ✅ Mongoose conectado ao MongoDB Atlas com sucesso\r\n✅ Conectado ao banco de dados\n\n📊 ESTATÍSTICAS DO BANCO:\n   - Total de registros: 17563\n   - Com protocolo: 17563\n   - Sem protocolo: 0\n\n🔍 DUPLICATAS NO BANCO:\n   ⚠️  154 protocolos duplicados encontrados:\n      - Protocolo C953950641155785425: 2 ocorrências\n      - Protocolo C255389145873820525: 2 ocorrências\n      - Protocolo C078305824848741625: 2 ocorrências\n      - Protocolo C909530705992914025: 2 ocorrências\n      - Protocolo C972972387303699025: 2 ocorrências\n      - Protocolo C473282549642386725: 2 ocorrências\n      - Protocolo C369381615125184925: 2 ocorrências\n      - Protocolo C693073066683462225: 2 ocorrências\n      - Protocolo C728079863048079625: 2 ocorrências\n      - Protocolo C724062531491725225: 2 ocorrências\n      ... e mais 144 protocolos duplicados\n\n📥 Lendo ",
+          "timestamp": "2025-12-11T17:46:04.253Z"
+        },
+        {
+          "teste": "Validar Unidades de Saúde",
+          "status": "PULOU",
+          "erro": "Command failed: node scripts/maintenance/validateUnidadesSaude.js\n\n❌ Erro durante validação: Error: ❌ Arquivo não encontrado: C:\\Users\\501379\\Desktop\\DRIVE\\Dashboard\\NOVO\\scripts\\data\\unidades-saude.json\n    at loadUnidadesSaude (file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/maintenance/validateUnidadesSaude.js:25:11)\n    at main (file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/maintenance/validateUnidadesSaude.js:144:18)\n    at file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/maintenance/validateUnidadesSaude.js:272:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\nStack: Error: ❌ Arquivo não encontrado: C:\\Users\\501379\\Desktop\\DRIVE\\Dashboard\\NOVO\\scripts\\data\\unidades-saude.json\n    at loadUnidadesSaude (file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/maintenance/validateUnidadesSaude.js:25:11)\n    at main (file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/maintenance/validateUnidadesSaude.js:144:18)\n    at file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/maintenance/validateUnidadesSaude.js:272:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n",
+          "output": "🏥 Validando Unidades de Saúde...\n\n📂 Carregando arquivo de unidades de saúde...\n",
+          "timestamp": "2025-12-11T17:46:04.479Z"
+        }
+      ]
+    },
+    "manutencao": {
+      "total": 3,
+      "passou": 1,
+      "falhou": 0,
+      "pulou": 2,
+      "detalhes": [
+        {
+          "teste": "Informações do Banco de Dados",
+          "status": "PASSOU",
+          "output": "🔍 Conectando ao banco de dados...\n\n✅ Conectado com sucesso!\n\n================================================================================\n📊 INFORMAÇÕES DO BANCO DE DADOS\n================================================================================\n\n📋 MODELO: Record (Registros da Ouvidoria)\n--------------------------------------------------------------------------------\nTotal de registros: 17.563\n\n📈 Estatísticas por Campo:\n\n  Status:\n    - Demanda encerrada (arquivamento) - Saúde: 6.449\n    - Demanda encerrada (arquivamento) - OG: 3.878\n    - Ouvidoria setorial da Saúde: 2.191\n    - Departamento de Atenção à Saúde (DAS): 1.614\n    - Departamento de Regulação: 696\n    - Respondidas pelos Departamentos para Setorial da Saúde: 434\n    - Ouvidoria Setorial de Meio Ambiente: 185\n    - Departamento de Enfermagem: 171\n    - Departamento de fiscalização - Meio Ambiente: 147\n    - Setor de Limpeza Urbana: 119\n\n  Tema (Top 10):\n    - Saúde: 12.509\n    - Comunicação Social: 1.479\n    - ",
+          "timestamp": "2025-12-11T17:46:13.200Z"
+        },
+        {
+          "teste": "Verificar Zeladoria",
+          "status": "PULOU",
+          "erro": "Command failed: node scripts/maintenance/checkZeladoria.js\n❌ ERRO: Modelo Zeladoria não encontrado no Prisma Client!\n💡 Execute: npm run prisma:generate para regenerar o cliente\n\n",
+          "output": "🔍 Verificando dados de Zeladoria no banco...\n\n✅ Conectado ao banco de dados\n\n📊 Total de registros: 20.203\n\n📊 Por Status:\n   FECHADO: 15.938\n   ABERTO: 1.547\n   INDEFERIDO: 1.192\n   ATENDIMENTO: 842\n   RECUSADO: 580\n   NOVO: 82\n   ATENDIDO: 22\n\nprisma:error \nInvalid `prisma.zeladoria.groupBy()` invocation:\n\n\nInput error. Every field used for orderBy must be included in the by-arguments of the query. Missing fields: id\n",
+          "timestamp": "2025-12-11T17:46:13.919Z"
+        },
+        {
+          "teste": "Verificar Protocolos com Prazo > 200 dias",
+          "status": "PULOU",
+          "erro": "Command failed: node scripts/maintenance/checkPrazoMais200.js\nnode:internal/modules/esm/resolve:274\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\501379\\Desktop\\DRIVE\\Dashboard\\NOVO\\scripts\\src\\utils\\dateUtils.js' imported from C:\\Users\\501379\\Desktop\\DRIVE\\Dashboard\\NOVO\\scripts\\maintenance\\checkPrazoMais200.js\r\n    at finalizeResolution (node:internal/modules/esm/resolve:274:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:859:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:983:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)\r\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)\r\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)\r\n    at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/src/utils/dateUtils.js'\r\n}\r\n\r\nNode.js v22.21.0\r\n",
+          "output": "node:internal/modules/esm/resolve:274\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\501379\\Desktop\\DRIVE\\Dashboard\\NOVO\\scripts\\src\\utils\\dateUtils.js' imported from C:\\Users\\501379\\Desktop\\DRIVE\\Dashboard\\NOVO\\scripts\\maintenance\\checkPrazoMais200.js\r\n    at finalizeResolution (node:internal/modules/esm/resolve:274:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:859:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:983:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)\r\n    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)\r\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)\r\n    at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/501379/Desktop/DRIVE/Dashboard/NOVO/scripts/src/utils/dateUtils.js'\r\n}\r\n\r\nNode.js v22.21.0\r\n",
+          "timestamp": "2025-12-11T17:46:14.143Z"
+        }
+      ]
+    },
+    "conexoes": {
+      "total": 3,
+      "passou": 1,
+      "falhou": 0,
+      "pulou": 2,
+      "detalhes": [
+        {
+          "teste": "Teste de Conexão MongoDB",
+          "status": "PASSOU",
+          "output": "14:45:00 [\u001b[32mdebug\u001b[39m]: Logger inicializado {\n  \"environment\": \"development\"\n}\r\n🧪 TESTE DE CONEXÃO MONGOOSE\n\n============================================================\n\n1️⃣ Testando conexão...\n14:45:01 [\u001b[32minfo\u001b[39m]: ✅ Mongoose conectado ao MongoDB Atlas com sucesso\r\n✅ Mongoose conectado com sucesso!\n\n2️⃣ Status da conexão:\n{\n  \"state\": \"connected\",\n  \"readyState\": 1,\n  \"host\": \"ac-fqrlqyy-shard-00-00.gk8g0dq.mongodb.net\",\n  \"port\": 27017,\n  \"name\": \"ouvidoria\"\n}\n\n3️⃣ Testando models...\n✅ Record: 17563 documentos\n✅ Zeladoria: 20203 documentos\n✅ ChatMessage: 160 documentos\n✅ AggregationCache: 54 documentos\n✅ NotificacaoEmail: 769 documentos\n✅ SecretariaInfo: 20 documentos\n✅ User: 7 documentos\n\n4️⃣ Testando query simples...\n✅ Query Record funcionando!\n   Protocolo: 00719.2024.000659-46\n   Status: Demanda encerrada (arquivamento) - OG\n\n5️⃣ Verificando índices...\n✅ Record tem 27 índices\n   Índices: _id_, records_protocolo_idx, records_statusDemanda_idx, records_tipoDeManifestacao",
+          "timestamp": "2025-12-11T17:45:02.234Z"
+        },
+        {
+          "teste": "Teste de Google Sheets",
+          "status": "PULOU",
+          "erro": "Command failed: node scripts/test/testGoogleSheets.js\n\n❌❌❌ ERRO NO TESTE ❌❌❌\n\n❌ Erro de credenciais!\n   - Verifique se o arquivo de credenciais existe\n   - Verifique se o GOOGLE_CREDENTIALS_FILE está correto no .env\n\n💡 Dicas:\n   1. Verifique se todas as variáveis estão no .env\n   2. Verifique se a planilha foi compartilhada com o Service Account\n   3. Verifique se a Google Sheets API está habilitada\n   4. Consulte GOOGLE_SHEETS_SETUP.md para mais detalhes\n\n",
+          "output": "🧪 Testando conexão com Google Sheets...\n\n📋 Verificando configurações...\n✅ GOOGLE_SHEET_ID: 1aF0I8pxABXhqyO2DmzBV9aoWHQN2h7LpTN-qdkGLc_g\n\n🔐 Autenticando...\n",
+          "timestamp": "2025-12-11T17:45:06.189Z"
+        },
+        {
+          "teste": "Teste de Chaves Gemini",
+          "status": "PULOU",
+          "erro": "Command failed: node scripts/test/testGeminiKeys.js\n",
+          "output": "🧪 Teste de Chaves da API Gemini\n\n============================================================\n\n📊 Total de chaves encontradas: 4\n\n\n🔑 Testando Chave 1/4...\n   Prefixo: AIzaSyDfOLsRs4J...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (382ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n🔑 Testando Chave 2/4...\n   Prefixo: AIzaSyBwahD5BNc...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (189ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n🔑 Testando Chave 3/4...\n   Prefixo: AIzaSyC3BGErwH-...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (188ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n🔑 Testando Chave 4/4...\n   Prefixo: AIzaSyDNpqk0rkU...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (199ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n============================================================\n\n📊 RESUMO DOS TESTES\n\n✅ Chaves funcionando: 0\n❌ Chaves com erro: 4\n⚠️  Chaves com exceção: 0\n\n❌ CHAVES COM ERRO:\n   Chave 1: AIzaSyDfOLsRs4J... - 403 - Your API key was reported as leaked. Please use another API key.\n   Chave 2: AIzaSyBwahD5BNc... - 403 - Your API key was reported as leaked. Please use another API key.\n   Chave 3: AIzaSyC3BGErwH-... - 403 - Your API key was reported as leaked. Please use another API key.\n   Chave 4: AIzaSyDNpqk0rkU... - 403 - Your API key was reported as leaked. Please use another API key.\n\n============================================================\n\n⚠️  NENHUMA CHAVE ESTÁ FUNCIONANDO!\n\n💡 Verifique:\n   1. Se as chaves estão corretas no arquivo .env\n   2. Se a API Gemini está habilitada no Google Cloud\n   3. Se as quotas não foram excedidas\n   4. Se as chaves têm permissõe",
+          "timestamp": "2025-12-11T17:45:10.338Z"
+        }
+      ]
+    },
+    "emails": {
+      "total": 3,
+      "passou": 3,
+      "falhou": 0,
+      "pulou": 0,
+      "detalhes": [
+        {
+          "teste": "Verificar Emails Enviados",
+          "status": "PASSOU",
+          "output": "📧 Verificando configuração de emails...\n\n═══════════════════════════════════════════════════════════\n\n📋 MAPEAMENTO DE SECRETARIAS:\n\nSecretarias com email específico:\n   - FUNDEC – Fundação de Apoio à Escola Técnica, Tecnologia, Esporte, Lazer, Cultura e Políticas Sociais de Duque de Caxias: educacao@fundec.rj.gov.br\n   - IPMDC – Instituto de Previdência dos Servidores Públicos do Município de Duque de Caxias: faleconosco@ipmdc.com.br\n   - Ouvidoria Geral do Município: ouvidoria@duquedecaxias.rj.gov.br\n   - Procuradoria-Geral do Município (PGM): gabineteadm.pgmdc@gmail.com\n   - Secretaria Municipal de Administração, Planejamento e Orçamento: sma@duquedecaxias.rj.gov.br\n   - Secretaria Municipal de Assistência Social e Direitos Humanos: ouvidoria.smasdh@duquedecaxias.rj.gov.br\n   - Secretaria Municipal de Comunicação Social e Relações Públicas: imprensa@duquedecaxias.rj.gov.br\n   - Secretaria Municipal de Educação: ouvidoriasme@smeduquedecaxias.rj.gov.br\n   - Secretaria Municipal de Es",
+          "timestamp": "2025-12-11T17:46:06.620Z"
+        },
+        {
+          "teste": "Verificar Notificações de Email",
+          "status": "PASSOU",
+          "output": "🔍 Verificando emails das secretarias na página de notificações...\n\n✅ Conectado ao MongoDB\n\n📊 Total de secretarias no banco com email: 20\n\n═══════════════════════════════════════════════════════════\n\n📋 COMPARAÇÃO DE EMAILS:\n\n═══════════════════════════════════════════════════════════\n\n📊 RESUMO DA VERIFICAÇÃO:\n\n   Total verificadas: 21\n   ✅ Corretas: 13\n   ❌ Incorretas: 7\n   ⚠️  Sem email (usando padrão): 1\n\n═══════════════════════════════════════════════════════════\n\n⚠️  PROBLEMAS ENCONTRADOS:\n\n1. Ouvidoria Geral do Município\n   Problema: Sem email cadastrado (usando padrão)\n   Email atual: ouvidoria@duquedecaxias.rj.gov.br\n\n2. Secretaria Municipal de Gestão e Inclusão e Mulher\n   Problema: Email não corresponde\n   Email esperado: smddti@duquedecaxias.rj.gov.br;secretariadamulherduquedecaxias@gmail.com (BANCO)\n   Email atual: smddti@duquedecaxias.rj.gov.br\n\n3. Secretaria Municipal de Fazenda\n   Problema: Email não corresponde\n   Email esperado: anistiafiscal@duquedecaxias.rj.gov.br;",
+          "timestamp": "2025-12-11T17:46:10.482Z"
+        },
+        {
+          "teste": "Verificar Cálculo de Vencimentos",
+          "status": "PASSOU",
+          "output": "🔍 Verificando cálculo de vencimentos\n\n📅 Data de hoje: 2025-12-11 (11/12/2025)\n\n📊 Analisando 5000 registros...\n\n═══════════════════════════════════════════════════════════\n\n📊 PROTOCOLOS POR CATEGORIA:\n\n   🚨 Vencendo HOJE (0 dias): 0\n   ⚠️  Vencendo AMANHÃ (1 dia): 0\n   📅 Vencendo em 2-7 dias: 0\n   📆 Vencendo em 8-15 dias: 0\n   ❌ Já vencidos: 309\n\n═══════════════════════════════════════════════════════════\n\n📋 EXEMPLOS DE CÁLCULO (primeiros 10):\n\n   1. Protocolo: C002911465104032225\n      Secretaria: Secretaria de Saúde\n      Data Criação: 2025-10-03\n      Tipo: Reclamação\n      Prazo: 30 dias\n      Data Vencimento Calculada: 2025-11-02\n      Dias Restantes: -39 (VENCIDO)\n\n   2. Protocolo: C009399328909116025\n      Secretaria: Secretaria de Obras e Agricultura\n      Data Criação: 2025-06-04\n      Tipo: Reclamação\n      Prazo: 30 dias\n      Data Vencimento Calculada: 2025-07-04\n      Dias Restantes: -160 (VENCIDO)\n\n   3. Protocolo: C011414258553886525\n      Secretaria: Secretaria d",
+          "timestamp": "2025-12-11T17:46:11.962Z"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "inicio": "2026-01-13T12:15:10.099Z",
+  "fim": "2026-01-13T12:15:42.422Z",
+  "total": 10,
+  "passou": 2,
+  "falhou": 6,
+  "pulou": 3,
+  "detalhes": [
+    {
+      "teste": "Validação de Sintaxe JavaScript",
+      "status": "PASSOU",
+      "total": 281
+    },
+    {
+      "teste": "Teste de APIs",
+      "status": "FALHOU",
+      "erro": "Command failed: npm run test:apis\n",
+      "output": "\n> ouvidoria-dashboard@3.0.0 test:apis\n> node scripts/test/test-all-apis.js\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  TESTE COMPLETO - APIs, KPIs e FILTROS                    ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nBase URL: http://localhost:3000\n\n\u001b[36m▶ Conectividade do servidor\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401\n\n\u001b[36m▶ GET /api/dashboard-data - Estrutura completa\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ GET /api/summary - KPIs principais\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ POST /api/filter/aggregated - Sem filtros (estrutura vazia)\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401: Unauthorized\n\n\u001b[36m▶ POST /api/filter/aggregated - Filtro por Status\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter status válido\n\n\u001b[36m▶ POST /api/filter/aggregated - Filtro por Canal\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter canal válido\n\n\u001b[36m▶ POST /api/filter/aggregated - Múltiplos filtros simultâneos\u001b[0m\n\u001b[31m✗ FAIL"
+    },
+    {
+      "teste": "Teste de KPIs",
+      "status": "FALHOU",
+      "erro": "Command failed: npm run test:kpis\n",
+      "output": "\n> ouvidoria-dashboard@3.0.0 test:kpis\n> node scripts/test/test-kpis.js\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  TESTE DE KPIs E MÉTRICAS                                 ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nBase URL: http://localhost:3000\n\n\u001b[36m▶ Testando GET /api/dashboard-data\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401\n\n\u001b[36m▶ Testando GET /api/summary\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m HTTP 401\n\n\u001b[36m▶ Testando consistência entre endpoints\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível comparar (endpoints falharam)\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  RESUMO                                                    ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\n\u001b[32m✓ Passou: 0\u001b[0m\n\u001b[31m✗ Falhou: 3\u001b[0m\n\n"
+    },
+    {
+      "teste": "Teste de Filtros",
+      "status": "FALHOU",
+      "erro": "Command failed: npm run test:filters\n",
+      "output": "\n> ouvidoria-dashboard@3.0.0 test:filters\n> node scripts/test/test-filters.js\n\n\u001b[34m╔════════════════════════════════════════════════════════════╗\u001b[0m\n\u001b[34m║  TESTE DE FILTROS CROSSFILTER                            ║\u001b[0m\n\u001b[34m╚════════════════════════════════════════════════════════════╝\u001b[0m\n\nBase URL: http://localhost:3000\n\n\u001b[36m▶ Obtendo valores de teste...\u001b[0m\n\u001b[31m✗ FAILED\u001b[0m Não foi possível obter dados do dashboard\n\n"
+    },
+    {
+      "teste": "Teste de Conexão MongoDB",
+      "status": "PASSOU",
+      "output": "09:15:30 [\u001b[32mdebug\u001b[39m]: Logger inicializado {\n  \"environment\": \"development\"\n}\r\n🧪 TESTE DE CONEXÃO MONGOOSE\n\n============================================================\n\n1️⃣ Testando conexão...\n09:15:32 [\u001b[32minfo\u001b[39m]: ✅ Mongoose conectado ao MongoDB Atlas com sucesso\r\n✅ Mongoose conectado com sucesso!\n\n2️⃣ Status da conexão:\n{\n  \"state\": \"connected\",\n  \"readyState\": 1,\n  \"host\": \"ac-fqrlqyy-shard-00-00.gk8g0dq.mongodb.net\",\n  \"port\": 27017,\n  \"name\": \"ouvidoria\"\n}\n\n3️⃣ Testando models.."
+    },
+    {
+      "teste": "Teste de Google Sheets",
+      "status": "FALHOU",
+      "erro": "Command failed: node scripts/test/testGoogleSheets.js\n\n❌❌❌ ERRO NO TESTE ❌❌❌\n\n❌ Erro de credenciais!\n   - Verifique se o arquivo de credenciais existe\n   - Verifique se o GOOGLE_CREDENTIALS_FILE está correto no .env\n\n💡 Dicas:\n   1. Verifique se todas as variáveis estão no .env\n   2. Verifique se a planilha foi compartilhada com o Service Account\n   3. Verifique se a Google Sheets API está habilitada\n   4. Consulte GOOGLE_SHEETS_SETUP.md para mais detalhes\n\n",
+      "output": "🧪 Testando conexão com Google Sheets...\n\n📋 Verificando configurações...\n✅ GOOGLE_SHEET_ID: 1SCifd4v8D54qihNbwFW2jhHlpR2YtIZVZo81u4qYhV4\n\n🔐 Autenticando...\n"
+    },
+    {
+      "teste": "Teste de Chaves Gemini",
+      "status": "FALHOU",
+      "erro": "Command failed: node scripts/test/testGeminiKeys.js\n",
+      "output": "🧪 Teste de Chaves da API Gemini\n\n============================================================\n\n📊 Total de chaves encontradas: 4\n\n\n🔑 Testando Chave 1/4...\n   Prefixo: AIzaSyBhJbRkQ17...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (1033ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n🔑 Testando Chave 2/4...\n   Prefixo: AIzaSyCtHXmh7Vl...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (200ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n🔑 Testando Chave 3/4...\n   Prefixo: AIzaSyD5tuRJmco...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (186ms)\n   📝 Mensagem: Your API key was reported as leaked. Please use another API key.\n   ⚠️  Permissão negada - verifique se a API está habilitada\n\n🔑 Testando Chave 4/4...\n   Prefixo: AIzaSyBmawLDceB...\n   Tamanho: 39 caracteres\n   ❌ ERRO 403 (188ms)\n   📝 Mensagem: Your A"
+    },
+    {
+      "teste": "Teste de Páginas",
+      "status": "FALHOU",
+      "erro": "Command failed: npm run test:pages\n\n❌ Erro ao executar testes: Could not find Chrome (ver. 142.0.7444.175). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: C:\\Users\\501379.PMDC\\.cache\\puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.\n",
+      "output": "\n> ouvidoria-dashboard@3.0.0 test:pages\n> node scripts/test/run-page-tests.js\n\n🧪 Script de Teste de Páginas e Gráficos\n\n✅ Servidor acessível em http://localhost:3000\n\n🚀 Iniciando testes com Puppeteer...\n\n"
+    },
+    {
+      "teste": "Teste Crossfilter",
+      "status": "FALHOU",
+      "erro": "Command failed: npm run test:crossfilter\n",
+      "output": "\n> ouvidoria-dashboard@3.0.0 test:crossfilter\n> node scripts/test/test-crossfilter.js\n\n\u001b[34m\n============================================================\u001b[0m\n\u001b[34m🧪 TESTE COMPLETO DO SISTEMA CROSSFILTER\u001b[0m\n\u001b[34m============================================================\n\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Status\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Status\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Status\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Status\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Tema\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Tema\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Tema\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Tema\u001b[0m\n\u001b[36mℹ️  \n📊 Testando filtros de Orgaos\u001b[0m\n\u001b[36mℹ️    Buscando valores distintos: http://localhost:3000/api/distinct?field=Orgaos\u001b[0m\n\u001b[33m⚠️    API retornou status 401 para Orgaos\u001b[0m\n\u001b[33m⚠️  Nenhum valor encontrado para Orgaos\u001b[0m\n\u001b[36mℹ️  \n📊 Testando fi"
+    },
+    {
+      "teste": "Teste de Agregações",
+      "status": "FALHOU",
+      "erro": "Command failed: npm run test:aggregation\n❌ Erro no teste: Error: API retornou status 401\n    at testAggregation (file:///C:/Users/501379.PMDC/Desktop/DRIVE/Dashboard/NOVO/scripts/test/test-aggregation-auto.js:31:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n",
+      "output": "\n> ouvidoria-dashboard@3.0.0 test:aggregation\n> node scripts/test/test-aggregation-auto.js\n\n🧪 Iniciando teste automatizado de agregação...\n\n1️⃣ Buscando dados filtrados da API...\n"
+    }
+  ]
+}

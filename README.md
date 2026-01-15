@@ -1,227 +1,157 @@
-# 📊 Dashboard Ouvidoria - Sistema NOVO
+# 🏛️ Sistema Integrado de Ouvidoria & Gestão Inteligente
+### Prefeitura de Duque de Caxias - RJ
 
-**Sistema completo de Ouvidoria e Zeladoria para Prefeitura de Duque de Caxias**
+![Status](https://img.shields.io/badge/Status-Produção-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Versão-2.5.0-blue?style=for-the-badge)
+![Node](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ---
 
-## 🚀 Início Rápido
+## 📖 Sobre o Projeto
+Este é o sistema central de inteligência de dados da **Ouvidoria Geral**, projetado para monitorar, analisar e gerenciar demandas de **Saúde (APS e Especializada)**, **Zeladoria** e **Serviços Públicos**. 
 
+O sistema atua como um **hub centralizador**, conectando dados de planilhas operacionais (Google Sheets), entradas manuais e pipelines automatizados em um **Dashboard Analítico em Tempo Real**.
+
+### 🔥 Diferenciais
+- **Pipeline Híbrido de Dados:** Sincronização bidirecional entre MongoDB Atlas e Google Sheets.
+- **Arquitetura Resiliente:** Preparado para ambientes VPS (PM2/Nginx) e Serverless (Render).
+- **Inteligência Geográfica:** Mapeamento de unidades de saúde e demandas por distrito.
+- **Otimização Extrema:** Cache em camadas (Memória, Disco, Banco) e tratamento de milhões de registros com performance.
+
+---
+
+## 🛠️ Stack Tecnológica
+
+### Backend (Core)
+- **Node.js & Express:** Arquitetura RESTful modular.
+- **MongoDB Atlas:**
+  - *Mongoose:* Schemas, validação e regras de negócio.
+  - *Native Driver:* Pipelines de agregação (`$lookup`, `$facet`) para performance máxima em relatórios.
+- **Segurança:** Helmet, Rate-Limiting, CORS configurável, Sanitização de inputs.
+- **Sessão:** `connect-mongo` para persistência robusta em cluster.
+
+### Frontend (Dashboard)
+- **Vanilla JS Modular:** SPA leve sem framework pesado, focado em velocidade.
+- **Chart.js:** Visualização de dados dinâmica.
+- **Leaflet:** Mapas interativos de cobertura de saúde.
+
+### Infraestrutura & DevOps
+- **PM2:** Gerenciamento de processos em cluster mode.
+- **Docker Ready:** Scripts compatíveis com containerização.
+- **CI/CD Scripts:** Automação completa de deploy (`scripts/deploy/`).
+
+---
+
+## 🚀 Como Rodar Localmente
+
+### Pré-requisitos
+- Node.js 18+
+- Conta MongoDB Atlas
+- Google Cloud Service Account (para acesso às planilhas)
+
+### 1. Clonar e Instalar
 ```bash
-# Instalar dependências
+git clone https://github.com/ouvidoriag/ogfinal.git
+cd ogfinal
 npm install
-
-# Iniciar servidor
-npm start
-
-# Acessar dashboard
-http://localhost:3000
 ```
 
----
-
-## 📁 Estrutura do Projeto
-
-```
-NOVO/
-├── src/                    # Backend (Express + MongoDB)
-│   ├── api/               # Controllers e rotas
-│   ├── services/          # Serviços (email, cache, etc)
-│   ├── models/            # Modelos Mongoose
-│   ├── utils/             # Utilitários
-│   └── server.js          # Servidor principal
-│
-├── public/                 # Frontend (SPA vanilla)
-│   ├── scripts/           # JavaScript modular
-│   │   ├── core/          # Sistemas globais
-│   │   ├── pages/         # Páginas do dashboard
-│   │   └── modules/       # Módulos reutilizáveis
-│   └── index.html         # Página principal
-│
-├── scripts/                # Scripts de manutenção
-│   ├── data/              # Sincronização de dados
-│   ├── email/             # Notificações
-│   └── maintenance/       # Manutenção
-│
-├── docs/                   # Documentação
-│   ├── setup/             # Guias de configuração
-│   ├── system/            # Documentação técnica
-│   └── troubleshooting/   # Solução de problemas
-│
-├── config/                 # Configurações (não versionadas)
-└── data/                   # Dados estáticos
-```
-
----
-
-## ⚙️ Configuração
-
-### Variáveis de Ambiente (.env)
+### 2. Configurar Variáveis de Ambiente
+Crie um arquivo `.env` na raiz baseado no `.env.example`:
 
 ```env
-# MongoDB
-MONGODB_ATLAS_URL=mongodb+srv://...
+NODE_ENV=development
+PORT=3000
 
-# Google Sheets
-GOOGLE_SHEET_ID=...
-GOOGLE_CREDENTIALS_FILE=google-credentials.json
+# Banco de Dados
+MONGODB_ATLAS_URL=mongodb+srv://<user>:<pass>@cluster.mongodb.net/dashboard
 
-# Email
-EMAIL_REMETENTE=ouvidoria@duquedecaxias.rj.gov.br
-EMAIL_OUVIDORIA_GERAL=ouvgeral.gestao@gmail.com
+# Google Sheets Integration
+GOOGLE_SHEET_ID=1SCifd4v8D54qihNbwFW2jhHlpR2YtIZVZo81u4qYhV4
+GOOGLE_CREDENTIALS_JSON={"type": "service_account", ...} # Conteúdo Minificado
 
-# Gemini AI
-GEMINI_API_KEY=...
+# Segurança
+SESSION_SECRET=sua_chave_super_secreta_aqui
+ENABLE_CHANGE_STREAM=true # false para ambientes sem VPC (ex: Render)
 ```
 
-### Credenciais Necessárias
-
-- **Google Sheets**: `config/google-credentials.json` (Service Account)
-- **Gmail API**: `config/gmail-credentials.json` (após autorização OAuth)
-
-**Guia completo**: [docs/setup/](docs/setup/)
-
----
-
-## 🛠️ Scripts Principais
-
+### 3. Executar
 ```bash
-# Servidor
-npm start                  # Iniciar servidor
-npm run dev               # Modo desenvolvimento
+# Modo Desenvolvimento (com auto-reload)
+npm run dev
 
-# Dados
-npm run update:sheets     # Atualizar do Google Sheets
-npm run pipeline          # Executar pipeline Python
-
-# Email
-npm run gmail:auth        # Autenticar Gmail
-
-# Manutenção
-npm run setup             # Setup inicial
+# Modo Produção
+npm start
 ```
 
 ---
 
-## 📊 Funcionalidades Principais
+## 📡 Endpoints Importantes
 
-### Dashboard Analytics
-- **Visão Geral**: KPIs, gráficos e análises consolidadas
-- **Por Órgão e Mês**: Análise detalhada por secretaria
-- **Tempo Médio**: Análise de tempo de atendimento
-- **Vencimentos**: Controle de prazos e alertas
-- **Filtros Inteligentes**: Sistema crossfilter multi-dimensional
-
-### Sistema de Notificações
-- Alertas automáticos por email
-- Notificações de vencimento (15 dias, vencimento, 30 dias, 60 dias)
-- Resumo diário para Ouvidoria Geral
-
-### Integração de Dados
-- Sincronização automática com Google Sheets
-- Pipeline Python para processamento
-- Cache híbrido (memória + arquivo + banco)
-
-### IA e Chat
-- Integração com Gemini AI
-- Chat inteligente com contexto dos dados
-- Reindexação automática
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| `GET` | `/api/dashboard-data` | Payload principal do dashboard (otimizado com cache) |
+| `GET` | `/api/unidades-saude` | Lista consolidada APS + Especializada |
+| `POST` | `/api/config/pipeline/execute` | Força a sincronização Google Sheets -> Mongo |
+| `GET` | `/health` | Status do sistema e conexões |
 
 ---
 
-## 🏗️ Arquitetura
+## 📦 Deploy em Produção (VPS)
 
-### Backend
-- **Node.js + Express.js**
-- **MongoDB Atlas** (Mongoose + Native Driver)
-- **Sistema de Cache** híbrido (8 sistemas)
-- **Logging** estruturado (Winston)
-- **Rotas modulares** por domínio
+O projeto inclui uma **suíte completa de scripts de automação** para deploy em VPS Ubuntu/Debian.
 
-### Frontend
-- **SPA vanilla** (sem frameworks)
-- **ChartFactory** para gráficos
-- **DataLoader** para carregamento unificado
-- **Crossfilter** para filtros inteligentes
-- **Lazy loading** de bibliotecas
+📜 **[Leia o Guia Completo de Deploy (DEPLOY_VPS_COMPLETO.md)](./DEPLOY_VPS_COMPLETO.md)**
 
-### Scripts
-- **Pipeline Python** para processamento
-- **Cron jobs** para automação
-- **Sincronização** Google Sheets → MongoDB
+### Resumo Rápido
+1. **Preparar (Windows/Local):**
+   ```powershell
+   ./scripts/deploy/prepare-vps-deploy.ps1
+   ```
+   *Gera um bundle otimizado `dashboard-deploy.tar.gz` sem lixo.*
 
----
-
-## 📚 Documentação
-
-### Setup e Configuração
-- [Google Sheets Setup](docs/setup/GOOGLE_SHEETS_SETUP.md)
-- [Pipeline Setup](docs/setup/PIPELINE_SETUP.md)
-- [Gmail Setup](docs/setup/SETUP_GMAIL.md)
-
-### Sistema Técnico
-- [Índice do Sistema](docs/system/INDICE_SISTEMA.md)
-- [Sistemas de Cache](docs/system/SISTEMAS_CACHE.md)
-- [Sistemas Globais](docs/system/SISTEMAS_GLOBAIS_COMPLETO.md)
-- [Guia de Logging](docs/system/GUIA_LOGGING.md)
-- [Planilhas, Pipeline e Emails](docs/system/PLANILHAS_PIPELINE_EMAILS.md)
-
-### Troubleshooting
-- [Troubleshooting Gmail](docs/troubleshooting/TROUBLESHOOTING_GMAIL.md)
-- [Gemini Quota](docs/troubleshooting/GEMINI_QUOTA.md)
+2. **Instalar (VPS):**
+   ```bash
+   # No servidor
+   ./scripts/deploy/install-vps.sh
+   ./scripts/deploy/start-production.sh
+   ```
 
 ---
 
-## 🔧 Tecnologias
+## 🔄 Pipeline de Dados (Sincronização)
 
-- **Backend**: Node.js, Express.js, MongoDB, Mongoose
-- **Frontend**: Vanilla JavaScript (ES Modules), Chart.js, Leaflet
-- **Scripts**: Python (pandas, gspread), Node.js
-- **Email**: Gmail API (OAuth 2.0)
-- **IA**: Google Gemini API
-- **Cache**: Memória, arquivo, MongoDB
+O sistema possui um motor de ingestão de dados localizado em `src/services/dataProcessor.js` e scripts auxiliares em `scripts/data/`.
 
----
-
-## ✅ Status do Sistema
-
-✅ **100% Operacional e Pronto para Produção**
-
-- ✅ Backend completo e otimizado
-- ✅ Frontend modular e responsivo
-- ✅ Sistema de filtros inteligentes
-- ✅ Notificações automáticas
-- ✅ Integração com Google Sheets
-- ✅ Cache híbrido implementado
-- ✅ Logging estruturado
-- ✅ Documentação completa
+1. **Ingestão:** Leitura da planilha Google Sheets "Tratada".
+2. **Normalização:** Padronização de nomes de bairros, secretarias e status.
+3. **Upsert:** Atualização inteligente no MongoDB (evita duplicatas).
+4. **Cache Busting:** Invalidação automática dos caches do dashboard.
 
 ---
 
-## 📝 Notas Importantes
+## 📂 Estrutura de Pastas
 
-### Regras do Sistema (CÉREBRO X-3)
-- Trabalha **exclusivamente** na pasta `NOVO/`
-- **Nunca** trabalha no sistema ANTIGO
-- Sempre modular, escalável e otimizado
-- Mantém separação de responsabilidades
-- Respeita caching e TTLs
-
-### Normalização de Dados
-- Campos padronizados: `protocolo`, `dataCriacaoIso`, `statusDemanda`, etc.
-- Pipeline Python normaliza antes de importar
-- Validação automática de campos obrigatórios
-
----
-
-## 🆘 Suporte
-
-Para problemas ou dúvidas:
-1. Consulte a [documentação](docs/)
-2. Verifique os [logs](logs/)
-3. Revise o [troubleshooting](docs/troubleshooting/)
+```
+/
+├── BANCO/               # Backups e metadados JSON (APS 2025, etc)
+├── config/              # Configurações de Nginx e Systemd
+├── public/              # Assets estáticos e scripts Frontend
+├── scripts/             
+│   ├── deploy/          # Scripts de automação VPS
+│   ├── maintenance/     # Backups, imports e verificações
+│   └── monitoring/      # Health checks
+├── src/                 # Código Fonte Backend
+│   ├── api/             # Controllers e Rotas
+│   ├── models/          # Schemas Mongoose
+│   ├── services/        # Lógica de Negócio
+│   └── utils/           # Helpers e Cache
+└── _LEGACY/             # Arquivos arquivados (limpeza)
+```
 
 ---
 
-**CÉREBRO X-3**  
-**Sistema de Ouvidoria - Prefeitura de Duque de Caxias**  
-**Última atualização**: Dezembro 2025
+## 📝 Licença
+© 2024-2026 Ouvidoria Geral - PMDC. Todos os direitos reservados.
+Desenvolvido com arquitetura **CÉREBRO X-3**.
