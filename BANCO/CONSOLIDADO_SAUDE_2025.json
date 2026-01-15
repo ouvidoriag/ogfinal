@@ -1,0 +1,28 @@
+{
+  "data_geracao": "2026-01-15",
+  "municipio": "Duque de Caxias",
+  "estado": "RJ",
+  "resumo": {
+    "aps_total": 77,
+    "saude_especializada_total": 34,
+    "total_geral": 111
+  },
+  "aps_por_distrito": {
+    "distrito_1": 20,
+    "distrito_2": 15,
+    "distrito_3": 13,
+    "distrito_4": 5
+  },
+  "saude_por_distrito": {
+    "distrito_1": 19,
+    "distrito_2": 4,
+    "distrito_3": 6,
+    "distrito_4": 5
+  },
+  "total_por_distrito": {
+    "distrito_1": 39,
+    "distrito_2": 19,
+    "distrito_3": 19,
+    "distrito_4": 10
+  }
+}

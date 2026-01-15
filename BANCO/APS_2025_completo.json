@@ -1,0 +1,772 @@
+[
+  {
+    "id": "aps_1",
+    "numero": 1,
+    "nome": "USF Mangueirinha",
+    "cnes": "5922461",
+    "endereco": "Rua da  Mina s/ n   Mangueirinha – Centenário - 1º Distrito  25030-365",
+    "cep": "25030-365",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_2",
+    "numero": 2,
+    "nome": "USF Manoel Barcelos (USF Parque Felicidade)",
+    "cnes": "6531474",
+    "endereco": "Rua Albino Imparato, n° 675 – Parque Felicidade - 1º Distrito 25080-010",
+    "cep": "25080-010",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_3",
+    "numero": 3,
+    "nome": "USF Maria Dalva Pereira Gomes (USF Centenário)",
+    "cnes": "3488772",
+    "endereco": "Rua: João Ribeiro, s/n° - Centenário - 1º Distrito  25030-160",
+    "cep": "25030-160",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_4",
+    "numero": 4,
+    "nome": "USF Carlos Roberto Zagari Koeler (USF Jardim Leal)",
+    "cnes": "3466027",
+    "endereco": "Rua João Olinto Machado, s/n° - Jardim Leal - 1º Distrito 25035-520",
+    "cep": "25035-520",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_5",
+    "numero": 5,
+    "nome": "USF Jardim Gramacho I II III V",
+    "cnes": "2283638",
+    "endereco": "Avenida Pistóia, s/nº - Jardim Gramacho - 1º Distrito 25055-052",
+    "cep": "25055-052",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_6",
+    "numero": 6,
+    "nome": "USF Jardim Gramacho IV",
+    "cnes": "7827997",
+    "endereco": "Rua Jundiaí, s/n°  - Jardim Gramacho - 1° Distrito - CEP: 25051-070",
+    "cep": "25051-070",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_7",
+    "numero": 7,
+    "nome": "USF Dois Irmãos",
+    "cnes": "6444547",
+    "endereco": "Rua da Assembleia, s/n° - Parque Beira Mar - 1º Distrito 25085-305",
+    "cep": "25085-305",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_8",
+    "numero": 8,
+    "nome": "USF Otacílio da Silva (USF Olavo Bilac)",
+    "cnes": "3466035",
+    "endereco": "Rua Aquidaban, s/n° - Olavo Bilac - 1º Distrito  25036-210",
+    "cep": "25036-210",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_9",
+    "numero": 9,
+    "nome": "USF Sebastião de Souza Alves (USF Beira Mar ou CASF Beira Mar)",
+    "cnes": "6371221",
+    "endereco": "Rua Francisco Alves, s/n° - Parque Beira Mar - 1º Distrito 25085-420",
+    "cep": "25085-420",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_10",
+    "numero": 10,
+    "nome": "USF Trevo das Missões",
+    "cnes": "2283565",
+    "endereco": "Rua quatro s/ n – Trevo das Missões - 25086-480 - 1º Distrito",
+    "cep": "25086-480",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_11",
+    "numero": 11,
+    "nome": "USF Cidade dos Meninos",
+    "cnes": "2283506",
+    "endereco": "Av. Darcy Vargas, S/N, (Antiga Estrada Da Camboaba, Km17) - Cidade Dos Meninos - 2º Distrito  25237-010",
+    "cep": "25237-010",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_12",
+    "numero": 12,
+    "nome": "USF Nelson Chaves de Araújo",
+    "cnes": "2283549",
+    "endereco": "Rua Nossa Srª Aparecida, s/n°- Santa Isabel - 2º Distrito.  CEP: 25233-240",
+    "cep": "25233-240",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_13",
+    "numero": 13,
+    "nome": "USF Pilar I e II",
+    "cnes": "2283484",
+    "endereco": "Praça Wilma de Jesus – Pilar - 2º Distrito. CEP: 25235-030",
+    "cep": "25235-030",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_14",
+    "numero": 14,
+    "nome": "USF São Bento",
+    "cnes": "5306949",
+    "endereco": "Rua União, Lt 01 - Qd 10 – São Bento - 2º Distrito.CEP: 25045-027",
+    "cep": "25045-027",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_15",
+    "numero": 15,
+    "nome": "UBS Calundú",
+    "cnes": "9973044",
+    "endereco": "Estr. do Calundu, S/N° –  Nossa Senhora do carmo – 2º distrito  CEP: 25040-610",
+    "cep": "25040-610",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_16",
+    "numero": 16,
+    "nome": "USF Parque Comercial",
+    "cnes": "2283468",
+    "endereco": "Rua João Raimundo, Lt 72 Qd 66 Pantanal -  CEP:25040-004 - 2° Distrito",
+    "cep": "25040-004",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_17",
+    "numero": 17,
+    "nome": "USF Vila Urussaí",
+    "cnes": "2277883",
+    "endereco": "Rua Presidente Roosevelt, s/n° - Saracuruna - CIEP 318 – Paulo Mendes Campos - 2º Distrito CEP: 25211-120",
+    "cep": "25211-120",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_18",
+    "numero": 18,
+    "nome": "UBS José Carlos Gianes (USF Vila Canaã - É USF)",
+    "cnes": "0978272",
+    "endereco": "Bonsucesso, S/N – Vila Canaã, 3° Distrito de Duque de Caxias 25255-160",
+    "cep": "25255-160",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_19",
+    "numero": 19,
+    "nome": "USF Cristovão Colombo",
+    "cnes": "2778645",
+    "endereco": "Rua Zumbi dos Palmares, s/n° - Cristovão Colombo - 3º Distrito - CEP: 25272-590",
+    "cep": "25272-590",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_20",
+    "numero": 20,
+    "nome": "USF Imbariê",
+    "cnes": "2295865",
+    "endereco": "Rua Venceslau Bras nº 15 Imbarie - 3º Distrito - CEP: 25275-160 ao lado do CEO",
+    "cep": "25275-160",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_21",
+    "numero": 21,
+    "nome": "USF Jardim Anhangá",
+    "cnes": "2778602",
+    "endereco": "Rua Pacoty, n° 20 – Jardim Anhangá - 3º Distrito - CEP: 25264-580",
+    "cep": "25264-580",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_22",
+    "numero": 22,
+    "nome": "USF Parada Angélica",
+    "cnes": "2778599",
+    "endereco": "Rua Evaristo de Moraes, 187 - Parada Angélica - 3º Distrito - CEP:  25272-310",
+    "cep": "25272-310",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_23",
+    "numero": 23,
+    "nome": "USF Parada Morabi",
+    "cnes": "7010915",
+    "endereco": "Av. Anhanga, s/nº - Parada Morabi - 3º Distrito - CEP:  25265-190",
+    "cep": "25265-190",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_24",
+    "numero": 24,
+    "nome": "USF Parque Eldorado",
+    "cnes": "2283581",
+    "endereco": "Rua Vanísia, nº 01 – Parque Eldorado - 3º Distrito - CEP:  25070-260",
+    "cep": "25070-260",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_25",
+    "numero": 25,
+    "nome": "USF Nova Campina",
+    "cnes": "2283611",
+    "endereco": "Rua Seis, s/nº - esquinas com Rua A e G - Nova Campinas - 3º Distrito - CEP: 25267-020",
+    "cep": "25267-020",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_26",
+    "numero": 26,
+    "nome": "USF Enfermeira Alaíde Ramos Amasonas (Equipes II e III de Jardim Anhangá)",
+    "cnes": "3375900",
+    "endereco": "Rua Violeta, S/N° - Jardim Anhangá - 3° Distrito - CEP: 25264-015 (CIEP 319: ODUVALDO VIANA FILHO)",
+    "cep": "25264-015",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_27",
+    "numero": 27,
+    "nome": "USF Parque Paulista",
+    "cnes": "5038685",
+    "endereco": "Rua: Trinta e um de março, nº88 - Parque Paulista - 3º Distriro - 25261-000 (anexo a UPH Equitativa)",
+    "cep": "25261-000",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_28",
+    "numero": 28,
+    "nome": "USF Santa Lúcia",
+    "cnes": "2283522",
+    "endereco": "Av. Automóvel Clube, km 56 – Santa Lúcia – Ciep 330 Brizolão Municipalizado Maria do Glória Correia Lemos – 3º Distrito - CEP: 25075-090",
+    "cep": "25075-090",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_29",
+    "numero": 29,
+    "nome": "USF Jardim Olimpo",
+    "cnes": "2283514",
+    "endereco": "Rua Maurícia s/n, Jardim Olimpo (Esquina com Rua Olimpo) - 4º Distrito - 25255-350",
+    "cep": "25255-350",
+    "distrito": 4,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_30",
+    "numero": 30,
+    "nome": "USF Santa Rosa (USF Parque Leal)",
+    "cnes": "5287545",
+    "endereco": "Rodovia Washington Luiz, km 97 - 4º Distrito - CEP: 25070-260",
+    "cep": "25070-260",
+    "distrito": 4,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_31",
+    "numero": 31,
+    "nome": "UBS Enir Angela Biciati Moreira (UBS Santo Antônio - É USF)",
+    "cnes": "2295814",
+    "endereco": "Rua Antônio Guedes, S/N° – Santo Antônio da Serra – Xerém - 4º Distrito - CEP:  25253-550",
+    "cep": "25253-550",
+    "distrito": 4,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_32",
+    "numero": null,
+    "nome": "UNIDADES BÁSICAS DE SAÚDE",
+    "cnes": "CNES",
+    "endereco": "ENDEREÇO",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "DATA DE INAUGURAÇÃO"
+  },
+  {
+    "id": "aps_33",
+    "numero": 1,
+    "nome": "UBS Abdul Nasser Haikal/ USF Parque Chuno (Mesmo local, equipes distintas)",
+    "cnes": "2277832",
+    "endereco": "Avenida Marques de Baependi s/n, Jardim Primavera - 2º Distrito.  CEP: 25265-008",
+    "cep": "25265-008",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_34",
+    "numero": 2,
+    "nome": "UBS Barão do Amapá",
+    "cnes": "7676670",
+    "endereco": "Rua Andréia, s/nº  -  Barão do Amapá - 4° Distrito - CEP: 25235-452",
+    "cep": "25235-452",
+    "distrito": 4,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_35",
+    "numero": 3,
+    "nome": "UBS Antônio Granja",
+    "cnes": "2277913",
+    "endereco": "Rua General Moreira Sampaio, s/nº, Parque Fluminense - CEP: 25045-380",
+    "cep": "25045-380",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_36",
+    "numero": 4,
+    "nome": "UBS Doutor José de Freitas",
+    "cnes": "2277964",
+    "endereco": "Rua Joaquim Tenório, S/N - Vila Operária, Duque de Caxias - RJ, 25086-390 (Praça José de Jesus) - 1° Distrito",
+    "cep": "25086-390",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_37",
+    "numero": 5,
+    "nome": "UBS Edna Siqueira Salles",
+    "cnes": "3275256",
+    "endereco": "Rua Paracatu, s/nº - Jardim Gramacho - CEP:  25055-110",
+    "cep": "25055-110",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_38",
+    "numero": 6,
+    "nome": "UBS Fátima de Oliveira Thomaz (UBS Jardim Leal)",
+    "cnes": "0978221",
+    "endereco": "Avenida Pedro Lessa Quadra 24 Lote 16  - Olavo Bilac - CEP: 25035-800",
+    "cep": "25035-800",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_39",
+    "numero": 7,
+    "nome": "UBS Rural",
+    "cnes": "2883325",
+    "endereco": "Estrada do Tabuleiro, s/nº- Xerém - 4° Distrito - CEP:  25245-750",
+    "cep": "25245-750",
+    "distrito": 4,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_40",
+    "numero": 8,
+    "nome": "UBS \"Bidi\" (UBS Senhor Benedito Nascimento - BIDI)",
+    "cnes": "4650514",
+    "endereco": "Rua São Luis, N°300 - Pilar, 2º Distrito. CEP.: 25225-750",
+    "cep": "25225-750",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_41",
+    "numero": 9,
+    "nome": "USF Sérgio de Freitas Américo (UBS Covanca - É UBS)",
+    "cnes": "4546113",
+    "endereco": "Rua Covanca, n° 340 - Parque Lafaiete - 1° Distrito - CEP: 25025-500",
+    "cep": "25025-500",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_42",
+    "numero": 10,
+    "nome": "UBS Vereador Adilson Ribeiro Braga (UBS Bom retiro)",
+    "cnes": "4650506",
+    "endereco": "Rua Maturim,s/n - Esquina com a Rua Janaina - Bom Retiro - 2° Distrito",
+    "cep": "N/A",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_43",
+    "numero": 11,
+    "nome": "UBS Capivari",
+    "cnes": "4666836",
+    "endereco": "Avenida Marques de Barbacena, N° 22 - Parque Capivari - 3° Distrito - CEP: 25245-230",
+    "cep": "25245-230",
+    "distrito": 3,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_44",
+    "numero": 12,
+    "nome": "UBS Nilza Maria Cardoso Rodrigues",
+    "cnes": "4872908",
+    "endereco": "Avenida General Sólon Ribeiro, N° 35 - Loja A, Engenho do Porto - 1° Distrito - CEP: 25015-210 - Esquina com Raul Pompéia",
+    "cep": "25015-210",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_45",
+    "numero": 13,
+    "nome": "UBS Cangulo (UBS Cangulo - Dr. Iveraldo Carvalho Pessôa)",
+    "cnes": "9927514",
+    "endereco": "Rua Padre Bartolomeu Fagundes, s/n - Cangulo - 2° Distrito - CEP: 25220-445",
+    "cep": "25220-445",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_46",
+    "numero": 14,
+    "nome": "UBS Sarapuí / USF Sarapuí (Em transição para se tornar ESF)",
+    "cnes": "2277670",
+    "endereco": "Avenida Pelotas, s/n° - Sarapuí - 1º Distrito  25050-100",
+    "cep": "25050-100",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_47",
+    "numero": 15,
+    "nome": "UBS Alayde Cunha (Em transição para se tornar ESF - Comporta USF Copacabana/ USF Vila Leopoldina)",
+    "cnes": "2277948",
+    "endereco": "Rua Suruí, S/Nº, Dr. Laureano - 1° Distrito - CEP:  25060-150",
+    "cep": "25060-150",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_48",
+    "numero": 16,
+    "nome": "UBS Aparecida Tavares  (Em transição para se tornar ESF - Comporta USF Vila São Luiz)",
+    "cnes": "5922496",
+    "endereco": "Av.Brasil, s/n° - Esquina c/ 14 de Julho – Vila São Luiz - 1º Distrito  25065-142",
+    "cep": "25065-142",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_49",
+    "numero": 17,
+    "nome": "UBS Nair Borges Fernandes (UBS Figueira - Em transição para se tornar ESF)",
+    "cnes": "0978248",
+    "endereco": "Rua Solimões, s/nº (esquina com Rodovia Washington Luíz), Figueira - CEP:  25231-340 - 2° Distrito",
+    "cep": "25231-340",
+    "distrito": 2,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_50",
+    "numero": 18,
+    "nome": "UBS Evangelina Tavares (Em transição para se tornar ESF )",
+    "cnes": "4855205",
+    "endereco": "Avenida Expedicionário José Amaro, n° 755 - Vila São Luis- 1° Distrito - CEP: 25065-090",
+    "cep": "25065-090",
+    "distrito": 1,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_51",
+    "numero": null,
+    "nome": "Clínica da Família",
+    "cnes": "CNES",
+    "endereco": "ENDEREÇO",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "DATA DE INAUGURAÇÃO"
+  },
+  {
+    "id": "aps_52",
+    "numero": 1,
+    "nome": "Clínica da Família José Bezerra da Silva (Vila Ideal)",
+    "cnes": "5804906",
+    "endereco": "Rua Osvaldo Aranha, s/n° - Vila Ideal - 1° Distrito - CEP: 25010-430",
+    "cep": "25010-430",
+    "distrito": 1,
+    "data_inauguracao": "2025-08-08 00:00:00"
+  },
+  {
+    "id": "aps_53",
+    "numero": 2,
+    "nome": "Clinica da Família Maria Helena Monteiro (Centenário Novo)",
+    "cnes": "5575141",
+    "endereco": "Rua Horácio Gomes, s/n° - Vila Centenário - 1° Distrito - CEP: 25020-137",
+    "cep": "25020-137",
+    "distrito": 1,
+    "data_inauguracao": "2025-08-16 00:00:00"
+  },
+  {
+    "id": "aps_54",
+    "numero": 3,
+    "nome": "Clínica da Família Pantanal",
+    "cnes": "4650522",
+    "endereco": "Rua Eça de Queiroz, n° 176, Pantanal - 25040-160 - 2° Distrito",
+    "cep": "25040-160",
+    "distrito": 2,
+    "data_inauguracao": "2025-10-25 00:00:00"
+  },
+  {
+    "id": "aps_55",
+    "numero": 4,
+    "nome": "Clínica da Família Taquara",
+    "cnes": "2277840",
+    "endereco": "Estrada Cachoeira das Dores, s/n° - Taquara  - 3º Distrito - 25270-040",
+    "cep": "25270-040",
+    "distrito": 3,
+    "data_inauguracao": "2025-11-25 00:00:00"
+  },
+  {
+    "id": "aps_56",
+    "numero": 5,
+    "nome": "Clínica da Família Parque Esperança",
+    "cnes": "3976378",
+    "endereco": "Rua Maria de Andrade, 01 - Jardim Vila Nova - 2º Distrito. CEP: 25.045-315",
+    "cep": "N/A",
+    "distrito": 2,
+    "data_inauguracao": "2025-11-29 00:00:00"
+  },
+  {
+    "id": "aps_57",
+    "numero": 6,
+    "nome": "Clínica da Família José Olavo de Araújo (Antiga USF Pilar III IV V)",
+    "cnes": "2778637",
+    "endereco": "Rua São Jorge nº 85 - Pilar, 2º Distrito. CEP.: 25.235-251",
+    "cep": "N/A",
+    "distrito": 2,
+    "data_inauguracao": "2025-12-01 00:00:00"
+  },
+  {
+    "id": "aps_58",
+    "numero": 7,
+    "nome": "Clínica da Família Barro Branco",
+    "cnes": "5205492",
+    "endereco": "Av. Pedro Alvares Cabral, lt 15 - Qd 01 – Jardim Barro Branco - 3º Distrito - CEP: 25267-120",
+    "cep": "25267-120",
+    "distrito": 3,
+    "data_inauguracao": "2025-12-09 00:00:00"
+  },
+  {
+    "id": "aps_59",
+    "numero": 8,
+    "nome": "Clínica da Família Gramacho",
+    "cnes": "3902781",
+    "endereco": "Rua Entre Rios s/n – Vila leopoldina  - 1º Distrito 25035-400 ao lado da praça",
+    "cep": "25035-400",
+    "distrito": 1,
+    "data_inauguracao": "2025-12-27 00:00:00"
+  },
+  {
+    "id": "aps_60",
+    "numero": 9,
+    "nome": "Clínica da Família Vila Maria Helena",
+    "cnes": "2778661",
+    "endereco": "Rua Salvador Correia,  S/N° – Vila Maria Helena - 2º Distrito -  CEP: 25265-008",
+    "cep": "25265-008",
+    "distrito": 2,
+    "data_inauguracao": "2025-12-19 00:00:00"
+  },
+  {
+    "id": "aps_61",
+    "numero": null,
+    "nome": "Quantitativos",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_62",
+    "numero": 31,
+    "nome": "Unidades de Saúde da Família - USF",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_63",
+    "numero": 18,
+    "nome": "Unidades Básicas de Saúde - UBS",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_64",
+    "numero": 9,
+    "nome": "Clínicas da Família - CF",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_65",
+    "numero": 58,
+    "nome": "Total de Unidades de Saúde",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_66",
+    "numero": 70,
+    "nome": "eSF's em USF's",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_67",
+    "numero": 8,
+    "nome": "eSF's em 04 UBS",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_68",
+    "numero": 2,
+    "nome": "esf's em 01 UPH (USF Parque Paulista)",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_69",
+    "numero": 80,
+    "nome": "eSF's",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_70",
+    "numero": 8,
+    "nome": "eSF's em USF's",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_71",
+    "numero": 9,
+    "nome": "eSF's em UBS's",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_72",
+    "numero": 17,
+    "nome": "eSF's",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_73",
+    "numero": 56,
+    "nome": "Equipes de Atenção Primária",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_74",
+    "numero": 41,
+    "nome": "Equipes de Saúde Bucal",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_75",
+    "numero": 3,
+    "nome": "e-Multi",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_76",
+    "numero": 1,
+    "nome": "Equpe de Consultório na Rua",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  },
+  {
+    "id": "aps_77",
+    "numero": 5,
+    "nome": "eSF's em CF's SENDO IMPLEMENTADAS - SENDO 3 EQUIPES NA CLÍNICA DA FAMÍLIA José Bezerra da Silva e 2 EQUIPES NA CLÍNICA DA FAMÍLIA Maria Helena Monteiro",
+    "cnes": "N/A",
+    "endereco": "N/A",
+    "cep": "N/A",
+    "distrito": null,
+    "data_inauguracao": "N/A"
+  }
+]

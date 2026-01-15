@@ -1,81 +1,98 @@
-# Arquivos e Pastas a Excluir do Deploy
-
 # Dependências (serão reinstaladas no servidor)
 node_modules/
 venv/
+__pycache__/
+*.pyc
 
 # Logs
-logs/*.log
-logs/*.log.*
+logs/
+*.log
+*.log.*
 
 # Cache e dados temporários
-db-data/*
+db-data/
 .cache/
 .temp/
 tmp/
 temp/
 
-# Build artifacts
+# Arquivos de build
 dist/
 build/
-
-# Testes e coverage
 coverage/
 .nyc_output/
+
+# Arquivos de teste
 test-results/
+test-results.json
+test-results-export.json
+relatorio-testes-completo.json
+tests/
 
 # Arquivos do sistema operacional
 .DS_Store
 Thumbs.db
 desktop.ini
-*.swp
-*~
 *.bak
+*~
 
-# IDEs
-.vscode/
-.idea/
-*.sublime-*
+# Backups
+_BACKUP_RAIZ/
+*.backup
+prod-bundle.zip
+ouvidoria-dashboard-*.tar.gz
+deploy-report-*.txt
 
 # Git
 .git/
+.gitignore
+.gitattributes
 
-# Arquivos sensíveis (NÃO incluir no deploy público)
-# Nota: .env e google-credentials.json devem ser configurados manualmente no servidor
-# .env
-# google-credentials.json
+# IDE e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
 
-# Documentação de desenvolvimento (opcional)
-# docs/development/
-# *.md (exceto README.md)
+# Arquivos sensíveis (transferir separadamente)
+.env
+google-credentials.json
 
-# Arquivos grandes desnecessários
-*.mp4
-*.avi
-*.mov
-*.zip
-*.tar.gz
-*.rar
+# Chaves SSH
+*.pem
+*.key
+*.pub
+ogm-access
+ogm-access.pub
+ogm-node.pub
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-pip-log.txt
-pip-delete-this-directory.txt
+# Configurações locais
+.nvmrc
+.npmrc
 
-# NPM
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.npm
-.eslintcache
+# TypeScript
+tsconfig.json
+tsconfig.build.json
+*.tsbuildinfo
 
-# Outros
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Tailwind
+tailwind.config.js
+postcss.config.js
+
+# Vitest
+vitest.config.js
+
+# Documentação de desenvolvimento
+LIMPEZA_MANUAL.md
+TRABALHO_CONCLUIDO.md
+
+# Banco de dados local (se houver)
+BANCO/
+
+# Scripts de desenvolvimento
+scripts/test/
+scripts/maintenance/mapear-sistema.js
+
+# Arquivos específicos do Windows
+*.lnk

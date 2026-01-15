@@ -12,6 +12,18 @@ import { fileURLToPath } from 'url';
 import compression from 'compression';
 import session from 'express-session';
 
+// Middlewares de segurança e performance
+import {
+  configureHelmet,
+  globalRateLimiter,
+  apiRateLimiter,
+  loginRateLimiter,
+  chatRateLimiter,
+  sanitizeInputs,
+  securityLogger
+} from './middleware/security.js';
+import { configureCompression } from './middleware/compression.js';
+
 import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
 
@@ -113,9 +125,35 @@ async function getMongoClient() {
 // Inicializar aplicação Express
 const app = express();
 
-// IMPORTANTE: Configurar trust proxy para Render/Heroku funcionar corretamente
+// IMPORTANTE: Configurar trust proxy para Nginx/Render/Heroku funcionar corretamente
 // Isso permite que o Express confie nos headers X-Forwarded-* do proxy reverso
 app.set('trust proxy', 1);
+
+// ============================================
+// MIDDLEWARES DE SEGURANÇA E PERFORMANCE
+// ============================================
+
+// Helmet.js - Headers de segurança HTTP
+if (process.env.NODE_ENV === 'production') {
+  app.use(configureHelmet());
+  logger.info('🛡️ Helmet.js ativado (headers de segurança)');
+}
+
+// Compressão Gzip otimizada
+app.use(configureCompression());
+logger.info('📦 Compressão Gzip ativada');
+
+// Rate limiting global
+if (process.env.NODE_ENV === 'production') {
+  app.use(globalRateLimiter);
+  logger.info('🚦 Rate limiting global ativado');
+}
+
+// Sanitização de inputs
+app.use(sanitizeInputs);
+
+// Log de segurança
+app.use(securityLogger);
 
 // Middlewares globais
 // Logar todas as respostas 504 para facilitar diagnóstico de timeouts
@@ -132,8 +170,6 @@ app.use((req, res, next) => {
   });
   next();
 });
-
-app.use(compression());
 app.use(cors({
   origin: true,
   credentials: true // Permitir cookies
@@ -143,28 +179,33 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Configurar sessões
-// IMPORTANTE: No Render, o cookie precisa de configurações específicas
-const isProduction = process.env.NODE_ENV === 'production';
-const isRender = process.env.RENDER || process.env.RENDER_EXTERNAL_URL;
-
-// Configurar sessões
-// NOTA: Usando MemoryStore por padrão. Em produção com múltiplas instâncias,
-// considere usar MongoDBStore ou Redis para persistência entre reinicializações
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'ouvidoria-dashboard-secret-key-change-in-production',
+const sessionConfig = {
+  secret: process.env.SESSION_SECRET || 'chave-secreta-padrao-dev',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: isProduction && isRender ? 'auto' : isProduction, // 'auto' no Render detecta HTTPS automaticamente
-    httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000, // 24 horas
-    sameSite: isProduction && isRender ? 'none' : 'lax' // 'none' necessário no Render para cross-site cookies
+    secure: process.env.NODE_ENV === 'production', // true apenas em HTTPS
+    maxAge: 1000 * 60 * 60 * 24 // 1 dia
   },
-  // Adicionar configuração de nome do cookie para evitar conflitos
-  name: 'ouvidoria.sid',
-  // Suprimir aviso do MemoryStore em produção (é esperado)
-  store: undefined // Usar MemoryStore padrão (adequado para single-instance)
-}));
+  name: 'ouvidoria.sid'
+};
+
+// Em produção, usar MongoStore
+if (process.env.NODE_ENV === 'production' && process.env.MONGODB_ATLAS_URL) {
+  try {
+    sessionConfig.store = MongoStore.create({
+      mongoUrl: process.env.MONGODB_ATLAS_URL,
+      collectionName: 'sessions',
+      ttl: 24 * 60 * 60,
+      autoRemove: 'native'
+    });
+    console.log('🔒 Sessão configurada com MongoStore (Produção)');
+  } catch (err) {
+    console.warn('⚠️ Falha ao configurar MongoStore, usando MemoryStore:', err.message);
+  }
+}
+
+app.use(session(sessionConfig));
 
 // OTIMIZAÇÃO: Middleware de cache para respostas da API
 app.use('/api', (req, res, next) => {
@@ -192,7 +233,18 @@ app.get('/api/emergency-logout', (req, res) => {
   res.json({ success: true, message: 'Cookies e sessão limpos. Faça login novamente.' });
 });
 
-// Health check (público)
+// Health check (público) - sem rate limiting
+app.get('/health', (_req, res) => {
+  res.json({
+    status: 'ok',
+    version: '3.0.0',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    memory: process.memoryUsage()
+  });
+});
+
+// Alias para /api/health
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', version: '3.0.0' });
 });
@@ -203,10 +255,15 @@ app.get('/.well-known/appspecific/com.chrome.devtools.json', (_req, res) => {
 });
 
 // Rotas da API
-// Registrar rotas de autenticação primeiro (públicas)
+// Registrar rotas de autenticação primeiro (públicas com rate limiting)
+app.use('/api/auth/login', loginRateLimiter); // Rate limiting específico para login
 app.use('/api/auth', authRoutes());
 
-// Depois registrar todas as outras rotas da API (protegidas)
+// Depois registrar todas as outras rotas da API (protegidas com rate limiting)
+if (process.env.NODE_ENV === 'production') {
+  app.use('/api/chat', chatRateLimiter); // Rate limiting específico para chat/IA
+  app.use('/api', apiRateLimiter); // Rate limiting para API geral
+}
 app.use('/api', requireAuth, apiRoutes(null, getMongoClient));
 
 // IMPORTANTE: Rotas de páginas ANTES do express.static para evitar conflitos

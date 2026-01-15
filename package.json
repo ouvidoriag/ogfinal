@@ -60,7 +60,16 @@
     "build:ts": "tsc --project tsconfig.build.json",
     "build:ts:clean": "npm run clean:build && npm run build:ts",
     "watch:ts": "tsc --project tsconfig.build.json --watch",
-    "clean:build": "node -e \"const fs=require('fs');const path=require('path');function rmDir(dir){if(fs.existsSync(dir)){fs.readdirSync(dir).forEach(f=>{const p=path.join(dir,f);if(fs.lstatSync(p).isDirectory())rmDir(p);else if(f.endsWith('.js')&&fs.existsSync(p.replace('.js','.ts')))fs.unlinkSync(p);});}}\" && rmDir public/scripts/core/chart-communication && rmDir public/scripts/core"
+    "clean:build": "node -e \"const fs=require('fs');const path=require('path');function rmDir(dir){if(fs.existsSync(dir)){fs.readdirSync(dir).forEach(f=>{const p=path.join(dir,f);if(fs.lstatSync(p).isDirectory())rmDir(p);else if(f.endsWith('.js')&&fs.existsSync(p.replace('.js','.ts')))fs.unlinkSync(p);});}}\" && rmDir public/scripts/core/chart-communication && rmDir public/scripts/core",
+    "deploy:prepare": "bash scripts/deploy/prepare-vps-deploy.sh",
+    "deploy:validate": "node scripts/deploy/validate-env.js",
+    "production:start": "bash scripts/deploy/start-production.sh",
+    "production:stop": "pm2 stop ouvidoria-dashboard",
+    "production:restart": "pm2 restart ouvidoria-dashboard",
+    "production:logs": "pm2 logs ouvidoria-dashboard",
+    "production:monit": "pm2 monit",
+    "health:check": "bash scripts/monitoring/health-check.sh",
+    "backup": "bash scripts/maintenance/backup.sh"
   },
   "keywords": [
     "ouvidoria",
@@ -74,11 +83,14 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "compression": "^1.8.1",
+    "connect-mongo": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^4.19.2",
+    "express-rate-limit": "^8.2.1",
     "express-session": "^1.18.2",
     "googleapis": "^144.0.0",
+    "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^6.3.0",
     "mongoose": "^9.0.0",

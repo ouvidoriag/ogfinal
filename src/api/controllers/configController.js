@@ -1221,12 +1221,34 @@ async function generateGoogleSheets(res, data, options) {
     const { dirname } = await import('path');
     const { readFileSync } = await import('fs');
     const { google } = await import('googleapis');
+    const fs = await import('fs'); // Import fs for existsSync
 
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
-    const credentialsPath = `${__dirname}/../../../config/google-credentials.json`;
 
-    const credentials = JSON.parse(readFileSync(credentialsPath, 'utf8'));
+    let credentials;
+    // Tentar ler de variável de ambiente (Produção)
+    if (process.env.GOOGLE_CREDENTIALS_JSON) {
+      try {
+        credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
+      } catch (e) {
+        console.error('Erro ao fazer parse de GOOGLE_CREDENTIALS_JSON:', e);
+      }
+    }
+
+    // Fallback para arquivo local (Desenvolvimento)
+    if (!credentials) {
+      const credentialsPath = `${__dirname}/../../../config/google-credentials.json`;
+      if (fs.existsSync(credentialsPath)) {
+        const credentialsFile = fs.readFileSync(credentialsPath);
+        credentials = JSON.parse(credentialsFile);
+      }
+    }
+
+    if (!credentials) {
+      throw new Error('Credenciais do Google não encontradas (ENV ou Arquivo).');
+    }
+
     const auth = new google.auth.GoogleAuth({
       credentials,
       scopes: ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
